@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsActaCompromiso" targetNamespace="http://tempuri.org/dsActaCompromiso.xsd" xmlns:mstns="http://tempuri.org/dsActaCompromiso.xsd" xmlns="http://tempuri.org/dsActaCompromiso.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsActaCompromiso" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsActaCompromiso" msprop:Generator_UserDSName="dsActaCompromiso">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Alumnos" msprop:Generator_TableClassName="AlumnosDataTable" msprop:Generator_TableVarName="tableAlumnos" msprop:Generator_TablePropName="Alumnos" msprop:Generator_RowDeletingName="AlumnosRowDeleting" msprop:Generator_RowChangingName="AlumnosRowChanging" msprop:Generator_RowEvHandlerName="AlumnosRowChangeEventHandler" msprop:Generator_RowDeletedName="AlumnosRowDeleted" msprop:Generator_UserTableName="Alumnos" msprop:Generator_RowChangedName="AlumnosRowChanged" msprop:Generator_RowEvArgName="AlumnosRowChangeEvent" msprop:Generator_RowClassName="AlumnosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="alumnos" msprop:Generator_ColumnVarNameInTable="columnalumnos" msprop:Generator_ColumnPropNameInRow="alumnos" msprop:Generator_ColumnPropNameInTable="alumnosColumn" msprop:Generator_UserColumnName="alumnos" type="xs:string" minOccurs="0" />
+              <xs:element name="dni" msprop:Generator_ColumnVarNameInTable="columndni" msprop:Generator_ColumnPropNameInRow="dni" msprop:Generator_ColumnPropNameInTable="dniColumn" msprop:Generator_UserColumnName="dni" type="xs:string" minOccurs="0" />
+              <xs:element name="sala" msprop:Generator_ColumnVarNameInTable="columnsala" msprop:Generator_ColumnPropNameInRow="sala" msprop:Generator_ColumnPropNameInTable="salaColumn" msprop:Generator_UserColumnName="sala" type="xs:string" minOccurs="0" />
+              <xs:element name="nivel" msprop:Generator_ColumnVarNameInTable="columnnivel" msprop:Generator_ColumnPropNameInRow="nivel" msprop:Generator_ColumnPropNameInTable="nivelColumn" msprop:Generator_UserColumnName="nivel" type="xs:string" minOccurs="0" />
+              <xs:element name="madre" msprop:Generator_ColumnVarNameInTable="columnmadre" msprop:Generator_ColumnPropNameInRow="madre" msprop:Generator_ColumnPropNameInTable="madreColumn" msprop:Generator_UserColumnName="madre" type="xs:string" minOccurs="0" />
+              <xs:element name="madre_dni" msprop:Generator_ColumnVarNameInTable="columnmadre_dni" msprop:Generator_ColumnPropNameInRow="madre_dni" msprop:Generator_ColumnPropNameInTable="madre_dniColumn" msprop:Generator_UserColumnName="madre_dni" type="xs:string" minOccurs="0" />
+              <xs:element name="madre_domicilio" msprop:Generator_ColumnVarNameInTable="columnmadre_domicilio" msprop:Generator_ColumnPropNameInRow="madre_domicilio" msprop:Generator_ColumnPropNameInTable="madre_domicilioColumn" msprop:Generator_UserColumnName="madre_domicilio" type="xs:string" minOccurs="0" />
+              <xs:element name="padre" msprop:Generator_ColumnVarNameInTable="columnpadre" msprop:Generator_ColumnPropNameInRow="padre" msprop:Generator_ColumnPropNameInTable="padreColumn" msprop:Generator_UserColumnName="padre" type="xs:string" minOccurs="0" />
+              <xs:element name="padre_dni" msprop:Generator_ColumnVarNameInTable="columnpadre_dni" msprop:Generator_ColumnPropNameInRow="padre_dni" msprop:Generator_ColumnPropNameInTable="padre_dniColumn" msprop:Generator_UserColumnName="padre_dni" type="xs:string" minOccurs="0" />
+              <xs:element name="padre_domicilio" msprop:Generator_ColumnVarNameInTable="columnpadre_domicilio" msprop:Generator_ColumnPropNameInRow="padre_domicilio" msprop:Generator_ColumnPropNameInTable="padre_domicilioColumn" msprop:Generator_UserColumnName="padre_domicilio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

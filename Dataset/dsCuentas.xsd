@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCuentas" targetNamespace="http://tempuri.org/dsCuentas.xsd" xmlns:mstns="http://tempuri.org/dsCuentas.xsd" xmlns="http://tempuri.org/dsCuentas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCuentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCuentas" msprop:Generator_UserDSName="dsCuentas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cuentas" msprop:Generator_TableClassName="cuentasDataTable" msprop:Generator_TableVarName="tablecuentas" msprop:Generator_TablePropName="cuentas" msprop:Generator_RowDeletingName="cuentasRowDeleting" msprop:Generator_RowChangingName="cuentasRowChanging" msprop:Generator_RowEvHandlerName="cuentasRowChangeEventHandler" msprop:Generator_RowDeletedName="cuentasRowDeleted" msprop:Generator_UserTableName="cuentas" msprop:Generator_RowChangedName="cuentasRowChanged" msprop:Generator_RowEvArgName="cuentasRowChangeEvent" msprop:Generator_RowClassName="cuentasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cue_codigo" msprop:Generator_ColumnVarNameInTable="columncue_codigo" msprop:Generator_ColumnPropNameInRow="cue_codigo" msprop:Generator_ColumnPropNameInTable="cue_codigoColumn" msprop:Generator_UserColumnName="cue_codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_nombre" msprop:Generator_ColumnVarNameInTable="columncue_nombre" msprop:Generator_ColumnPropNameInRow="cue_nombre" msprop:Generator_ColumnPropNameInTable="cue_nombreColumn" msprop:Generator_UserColumnName="cue_nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_activa" msprop:Generator_ColumnVarNameInTable="columncue_activa" msprop:Generator_ColumnPropNameInRow="cue_activa" msprop:Generator_ColumnPropNameInTable="cue_activaColumn" msprop:Generator_UserColumnName="cue_activa" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_devengaciones" msprop:Generator_ColumnVarNameInTable="columncue_devengaciones" msprop:Generator_ColumnPropNameInRow="cue_devengaciones" msprop:Generator_ColumnPropNameInTable="cue_devengacionesColumn" msprop:Generator_UserColumnName="cue_devengaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_facturaciones" msprop:Generator_ColumnVarNameInTable="columncue_facturaciones" msprop:Generator_ColumnPropNameInRow="cue_facturaciones" msprop:Generator_ColumnPropNameInTable="cue_facturacionesColumn" msprop:Generator_UserColumnName="cue_facturaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_pagosEgreso" msprop:Generator_ColumnVarNameInTable="columncue_pagosEgreso" msprop:Generator_ColumnPropNameInRow="cue_pagosEgreso" msprop:Generator_ColumnPropNameInTable="cue_pagosEgresoColumn" msprop:Generator_UserColumnName="cue_pagosEgreso" type="xs:string" minOccurs="0" />
+              <xs:element name="cue_pagosGasto" msprop:Generator_ColumnVarNameInTable="columncue_pagosGasto" msprop:Generator_ColumnPropNameInRow="cue_pagosGasto" msprop:Generator_ColumnPropNameInTable="cue_pagosGastoColumn" msprop:Generator_UserColumnName="cue_pagosGasto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

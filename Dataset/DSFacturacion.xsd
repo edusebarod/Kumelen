@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFacturacion" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="kumelenConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="kumelenConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Kumelen.My.MySettings.GlobalReference.Default.kumelenConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFacturacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFacturacion" msprop:Generator_UserDSName="dsFacturacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="movimientos" msprop:Generator_TableClassName="movimientosDataTable" msprop:Generator_TableVarName="tablemovimientos" msprop:Generator_TablePropName="movimientos" msprop:Generator_RowDeletingName="movimientosRowDeleting" msprop:Generator_RowChangingName="movimientosRowChanging" msprop:Generator_RowEvHandlerName="movimientosRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosRowDeleted" msprop:Generator_UserTableName="movimientos" msprop:Generator_RowChangedName="movimientosRowChanged" msprop:Generator_RowEvArgName="movimientosRowChangeEvent" msprop:Generator_RowClassName="movimientosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mov_encargado" msprop:Generator_ColumnVarNameInTable="columnmov_encargado" msprop:Generator_ColumnPropNameInRow="mov_encargado" msprop:Generator_ColumnPropNameInTable="mov_encargadoColumn" msprop:Generator_UserColumnName="mov_encargado" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_fecha" msprop:Generator_ColumnVarNameInTable="columnmov_fecha" msprop:Generator_ColumnPropNameInRow="mov_fecha" msprop:Generator_ColumnPropNameInTable="mov_fechaColumn" msprop:Generator_UserColumnName="mov_fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_total" msprop:Generator_ColumnVarNameInTable="columnmov_total" msprop:Generator_ColumnPropNameInRow="mov_total" msprop:Generator_ColumnPropNameInTable="mov_totalColumn" msprop:Generator_UserColumnName="mov_total" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_pto_venta" msprop:Generator_ColumnVarNameInTable="columnmov_pto_venta" msprop:Generator_ColumnPropNameInRow="mov_pto_venta" msprop:Generator_ColumnPropNameInTable="mov_pto_ventaColumn" msprop:Generator_UserColumnName="mov_pto_venta" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_nro_factura" msprop:Generator_ColumnVarNameInTable="columnmov_nro_factura" msprop:Generator_ColumnPropNameInRow="mov_nro_factura" msprop:Generator_ColumnPropNameInTable="mov_nro_facturaColumn" msprop:Generator_UserColumnName="mov_nro_factura" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_obs" msprop:Generator_ColumnVarNameInTable="columnmov_obs" msprop:Generator_ColumnPropNameInRow="mov_obs" msprop:Generator_ColumnPropNameInTable="mov_obsColumn" msprop:Generator_UserColumnName="mov_obs" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_id" msprop:Generator_ColumnVarNameInTable="columnmov_id" msprop:Generator_ColumnPropNameInRow="mov_id" msprop:Generator_ColumnPropNameInTable="mov_idColumn" msprop:Generator_UserColumnName="mov_id" type="xs:string" minOccurs="0" />
+              <xs:element name="per_id" msprop:Generator_ColumnVarNameInTable="columnper_id" msprop:Generator_ColumnPropNameInRow="per_id" msprop:Generator_ColumnPropNameInTable="per_idColumn" msprop:Generator_UserColumnName="per_id" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_sala" msprop:Generator_ColumnVarNameInTable="columnmov_sala" msprop:Generator_ColumnPropNameInRow="mov_sala" msprop:Generator_ColumnPropNameInTable="mov_salaColumn" msprop:Generator_UserColumnName="mov_sala" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="movimientosdetalles" msprop:Generator_TableClassName="movimientosdetallesDataTable" msprop:Generator_TableVarName="tablemovimientosdetalles" msprop:Generator_TablePropName="movimientosdetalles" msprop:Generator_RowDeletingName="movimientosdetallesRowDeleting" msprop:Generator_RowChangingName="movimientosdetallesRowChanging" msprop:Generator_RowEvHandlerName="movimientosdetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosdetallesRowDeleted" msprop:Generator_UserTableName="movimientosdetalles" msprop:Generator_RowChangedName="movimientosdetallesRowChanged" msprop:Generator_RowEvArgName="movimientosdetallesRowChangeEvent" msprop:Generator_RowClassName="movimientosdetallesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mde_monto" msprop:Generator_ColumnVarNameInTable="columnmde_monto" msprop:Generator_ColumnPropNameInRow="mde_monto" msprop:Generator_ColumnPropNameInTable="mde_montoColumn" msprop:Generator_UserColumnName="mde_monto" type="xs:string" minOccurs="0" />
+              <xs:element name="mde_concepto" msprop:Generator_ColumnVarNameInTable="columnmde_concepto" msprop:Generator_ColumnPropNameInRow="mde_concepto" msprop:Generator_ColumnPropNameInTable="mde_conceptoColumn" msprop:Generator_UserColumnName="mde_concepto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

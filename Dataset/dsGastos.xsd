@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsGastos" targetNamespace="http://tempuri.org/dsGastos.xsd" xmlns:mstns="http://tempuri.org/dsGastos.xsd" xmlns="http://tempuri.org/dsGastos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="kumelenConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="kumelenConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Kumelen.My.MySettings.GlobalReference.Default.kumelenConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="kumelenConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="kumelenConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Kumelen.My.MySettings.GlobalReference.Default.kumelenConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsGastos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsGastos" msprop:Generator_UserDSName="dsGastos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="movimientos" msprop:Generator_TableClassName="movimientosDataTable" msprop:Generator_TableVarName="tablemovimientos" msprop:Generator_RowChangedName="movimientosRowChanged" msprop:Generator_TablePropName="movimientos" msprop:Generator_RowDeletingName="movimientosRowDeleting" msprop:Generator_RowChangingName="movimientosRowChanging" msprop:Generator_RowEvHandlerName="movimientosRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosRowDeleted" msprop:Generator_RowClassName="movimientosRow" msprop:Generator_UserTableName="movimientos" msprop:Generator_RowEvArgName="movimientosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="mov_fecha" msprop:Generator_ColumnVarNameInTable="columnmov_fecha" msprop:Generator_ColumnPropNameInRow="mov_fecha" msprop:Generator_ColumnPropNameInTable="mov_fechaColumn" msprop:Generator_UserColumnName="mov_fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="mov_obs" msprop:Generator_ColumnVarNameInTable="columnmov_obs" msprop:Generator_ColumnPropNameInRow="mov_obs" msprop:Generator_ColumnPropNameInTable="mov_obsColumn" msprop:Generator_UserColumnName="mov_obs" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_cuentaDebe" msprop:Generator_ColumnVarNameInTable="columnmov_cuentaDebe" msprop:Generator_ColumnPropNameInRow="mov_cuentaDebe" msprop:Generator_ColumnPropNameInTable="mov_cuentaDebeColumn" msprop:Generator_UserColumnName="mov_cuentaDebe" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_concepto" msprop:Generator_ColumnVarNameInTable="columnmov_concepto" msprop:Generator_ColumnPropNameInRow="mov_concepto" msprop:Generator_ColumnPropNameInTable="mov_conceptoColumn" msprop:Generator_UserColumnName="mov_concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_total" msprop:Generator_ColumnVarNameInTable="columnmov_total" msprop:Generator_ColumnPropNameInRow="mov_total" msprop:Generator_ColumnPropNameInTable="mov_totalColumn" msprop:Generator_UserColumnName="mov_total" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_cuentaHaber" msprop:Generator_ColumnVarNameInTable="columnmov_cuentaHaber" msprop:Generator_ColumnPropNameInRow="mov_cuentaHaber" msprop:Generator_ColumnPropNameInTable="mov_cuentaHaberColumn" msprop:Generator_UserColumnName="mov_cuentaHaber" type="xs:string" minOccurs="0" />
+              <xs:element name="proveedor" msprop:Generator_ColumnVarNameInTable="columnproveedor" msprop:Generator_ColumnPropNameInRow="proveedor" msprop:Generator_ColumnPropNameInTable="proveedorColumn" msprop:Generator_UserColumnName="proveedor" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

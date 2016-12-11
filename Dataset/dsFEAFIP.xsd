@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFEAFIP" targetNamespace="http://tempuri.org/dsFEAFIP.xsd" xmlns:mstns="http://tempuri.org/dsFEAFIP.xsd" xmlns="http://tempuri.org/dsFEAFIP.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFEAFIP" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFEAFIP" msprop:Generator_UserDSName="dsFEAFIP">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Facturas" msprop:Generator_TableClassName="FacturasDataTable" msprop:Generator_TableVarName="tableFacturas" msprop:Generator_TablePropName="Facturas" msprop:Generator_RowDeletingName="FacturasRowDeleting" msprop:Generator_RowChangingName="FacturasRowChanging" msprop:Generator_RowEvHandlerName="FacturasRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturasRowDeleted" msprop:Generator_UserTableName="Facturas" msprop:Generator_RowChangedName="FacturasRowChanged" msprop:Generator_RowEvArgName="FacturasRowChangeEvent" msprop:Generator_RowClassName="FacturasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TipoComp" msprop:Generator_ColumnVarNameInTable="columnTipoComp" msprop:Generator_ColumnPropNameInRow="TipoComp" msprop:Generator_ColumnPropNameInTable="TipoCompColumn" msprop:Generator_UserColumnName="TipoComp" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaCom" msprop:Generator_ColumnVarNameInTable="columnFechaCom" msprop:Generator_ColumnPropNameInRow="FechaCom" msprop:Generator_ColumnPropNameInTable="FechaComColumn" msprop:Generator_UserColumnName="FechaCom" type="xs:string" minOccurs="0" />
+              <xs:element name="PtoVta" msprop:Generator_ColumnVarNameInTable="columnPtoVta" msprop:Generator_ColumnPropNameInRow="PtoVta" msprop:Generator_ColumnPropNameInTable="PtoVtaColumn" msprop:Generator_UserColumnName="PtoVta" type="xs:string" minOccurs="0" />
+              <xs:element name="NCompDesde" msprop:Generator_ColumnVarNameInTable="columnNCompDesde" msprop:Generator_ColumnPropNameInRow="NCompDesde" msprop:Generator_ColumnPropNameInTable="NCompDesdeColumn" msprop:Generator_UserColumnName="NCompDesde" type="xs:string" minOccurs="0" />
+              <xs:element name="NCompHasta" msprop:Generator_ColumnVarNameInTable="columnNCompHasta" msprop:Generator_ColumnPropNameInRow="NCompHasta" msprop:Generator_ColumnPropNameInTable="NCompHastaColumn" msprop:Generator_UserColumnName="NCompHasta" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoDoc" msprop:Generator_ColumnVarNameInTable="columnTipoDoc" msprop:Generator_ColumnPropNameInRow="TipoDoc" msprop:Generator_ColumnPropNameInTable="TipoDocColumn" msprop:Generator_UserColumnName="TipoDoc" type="xs:string" minOccurs="0" />
+              <xs:element name="DNIPapa" msprop:Generator_ColumnVarNameInTable="columnDNIPapa" msprop:Generator_ColumnPropNameInRow="DNIPapa" msprop:Generator_ColumnPropNameInTable="DNIPapaColumn" msprop:Generator_UserColumnName="DNIPapa" type="xs:string" minOccurs="0" />
+              <xs:element name="ImpTotalOp" msprop:Generator_ColumnVarNameInTable="columnImpTotalOp" msprop:Generator_ColumnPropNameInRow="ImpTotalOp" msprop:Generator_ColumnPropNameInTable="ImpTotalOpColumn" msprop:Generator_UserColumnName="ImpTotalOp" type="xs:string" minOccurs="0" />
+              <xs:element name="ITCNING" msprop:Generator_ColumnVarNameInTable="columnITCNING" msprop:Generator_ColumnPropNameInRow="ITCNING" msprop:Generator_ColumnPropNameInTable="ITCNINGColumn" msprop:Generator_UserColumnName="ITCNING" type="xs:string" minOccurs="0" />
+              <xs:element name="ING" msprop:Generator_ColumnVarNameInTable="columnING" msprop:Generator_ColumnPropNameInRow="ING" msprop:Generator_ColumnPropNameInTable="INGColumn" msprop:Generator_UserColumnName="ING" type="xs:string" minOccurs="0" />
+              <xs:element name="IL" msprop:Generator_ColumnVarNameInTable="columnIL" msprop:Generator_ColumnPropNameInRow="IL" msprop:Generator_ColumnPropNameInTable="ILColumn" msprop:Generator_UserColumnName="IL" type="xs:string" minOccurs="0" />
+              <xs:element name="ILRNI" msprop:Generator_ColumnVarNameInTable="columnILRNI" msprop:Generator_ColumnPropNameInRow="ILRNI" msprop:Generator_ColumnPropNameInTable="ILRNIColumn" msprop:Generator_UserColumnName="ILRNI" type="xs:string" minOccurs="0" />
+              <xs:element name="ImpOpExentas" msprop:Generator_ColumnVarNameInTable="columnImpOpExentas" msprop:Generator_ColumnPropNameInRow="ImpOpExentas" msprop:Generator_ColumnPropNameInTable="ImpOpExentasColumn" msprop:Generator_UserColumnName="ImpOpExentas" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

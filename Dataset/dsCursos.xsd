@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCursos" targetNamespace="http://tempuri.org/dsCursos.xsd" xmlns:mstns="http://tempuri.org/dsCursos.xsd" xmlns="http://tempuri.org/dsCursos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCursos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCursos" msprop:Generator_UserDSName="dsCursos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cursos" msprop:Generator_TableClassName="CursosDataTable" msprop:Generator_TableVarName="tableCursos" msprop:Generator_TablePropName="Cursos" msprop:Generator_RowDeletingName="CursosRowDeleting" msprop:Generator_RowChangingName="CursosRowChanging" msprop:Generator_RowEvHandlerName="CursosRowChangeEventHandler" msprop:Generator_RowDeletedName="CursosRowDeleted" msprop:Generator_UserTableName="Cursos" msprop:Generator_RowChangedName="CursosRowChanged" msprop:Generator_RowEvArgName="CursosRowChangeEvent" msprop:Generator_RowClassName="CursosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cur_id" msprop:Generator_ColumnVarNameInTable="columncur_id" msprop:Generator_ColumnPropNameInRow="cur_id" msprop:Generator_ColumnPropNameInTable="cur_idColumn" msprop:Generator_UserColumnName="cur_id" type="xs:string" minOccurs="0" />
+              <xs:element name="emp_nombre" msprop:Generator_ColumnVarNameInTable="columnemp_nombre" msprop:Generator_ColumnPropNameInRow="emp_nombre" msprop:Generator_ColumnPropNameInTable="emp_nombreColumn" msprop:Generator_UserColumnName="emp_nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="cur_anolectivo" msprop:Generator_ColumnVarNameInTable="columncur_anolectivo" msprop:Generator_ColumnPropNameInRow="cur_anolectivo" msprop:Generator_ColumnPropNameInTable="cur_anolectivoColumn" msprop:Generator_UserColumnName="cur_anolectivo" type="xs:string" minOccurs="0" />
+              <xs:element name="cur_nombre" msprop:Generator_ColumnVarNameInTable="columncur_nombre" msprop:Generator_ColumnPropNameInRow="cur_nombre" msprop:Generator_ColumnPropNameInTable="cur_nombreColumn" msprop:Generator_UserColumnName="cur_nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="cur_turno" msprop:Generator_ColumnVarNameInTable="columncur_turno" msprop:Generator_ColumnPropNameInRow="cur_turno" msprop:Generator_ColumnPropNameInTable="cur_turnoColumn" msprop:Generator_UserColumnName="cur_turno" type="xs:string" minOccurs="0" />
+              <xs:element name="cur_activo" msprop:Generator_ColumnVarNameInTable="columncur_activo" msprop:Generator_ColumnPropNameInRow="cur_activo" msprop:Generator_ColumnPropNameInTable="cur_activoColumn" msprop:Generator_UserColumnName="cur_activo" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
