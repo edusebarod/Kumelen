@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsServicio" targetNamespace="http://tempuri.org/dsServicio.xsd" xmlns:mstns="http://tempuri.org/dsServicio.xsd" xmlns="http://tempuri.org/dsServicio.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsServicio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsServicio" msprop:Generator_UserDSName="dsServicio">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Servicio" msprop:Generator_TableClassName="ServicioDataTable" msprop:Generator_TableVarName="tableServicio" msprop:Generator_TablePropName="Servicio" msprop:Generator_RowDeletingName="ServicioRowDeleting" msprop:Generator_RowChangingName="ServicioRowChanging" msprop:Generator_RowEvHandlerName="ServicioRowChangeEventHandler" msprop:Generator_RowDeletedName="ServicioRowDeleted" msprop:Generator_UserTableName="Servicio" msprop:Generator_RowChangedName="ServicioRowChanged" msprop:Generator_RowEvArgName="ServicioRowChangeEvent" msprop:Generator_RowClassName="ServicioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="serv_id" msprop:Generator_ColumnVarNameInTable="columnserv_id" msprop:Generator_ColumnPropNameInRow="serv_id" msprop:Generator_ColumnPropNameInTable="serv_idColumn" msprop:Generator_UserColumnName="serv_id" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_codigo" msprop:Generator_ColumnVarNameInTable="columnserv_codigo" msprop:Generator_ColumnPropNameInRow="serv_codigo" msprop:Generator_ColumnPropNameInTable="serv_codigoColumn" msprop:Generator_UserColumnName="serv_codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_nombre" msprop:Generator_ColumnVarNameInTable="columnserv_nombre" msprop:Generator_ColumnPropNameInRow="serv_nombre" msprop:Generator_ColumnPropNameInTable="serv_nombreColumn" msprop:Generator_UserColumnName="serv_nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_precio" msprop:Generator_ColumnVarNameInTable="columnserv_precio" msprop:Generator_ColumnPropNameInRow="serv_precio" msprop:Generator_ColumnPropNameInTable="serv_precioColumn" msprop:Generator_UserColumnName="serv_precio" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_activo" msprop:Generator_ColumnVarNameInTable="columnserv_activo" msprop:Generator_ColumnPropNameInRow="serv_activo" msprop:Generator_ColumnPropNameInTable="serv_activoColumn" msprop:Generator_UserColumnName="serv_activo" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_observaciones" msprop:Generator_ColumnVarNameInTable="columnserv_observaciones" msprop:Generator_ColumnPropNameInRow="serv_observaciones" msprop:Generator_ColumnPropNameInTable="serv_observacionesColumn" msprop:Generator_UserColumnName="serv_observaciones" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_tipo" msprop:Generator_ColumnVarNameInTable="columnserv_tipo" msprop:Generator_ColumnPropNameInRow="serv_tipo" msprop:Generator_ColumnPropNameInTable="serv_tipoColumn" msprop:Generator_UserColumnName="serv_tipo" type="xs:string" minOccurs="0" />
+              <xs:element name="serv_cantidad" msprop:Generator_ColumnVarNameInTable="columnserv_cantidad" msprop:Generator_ColumnPropNameInRow="serv_cantidad" msprop:Generator_ColumnPropNameInTable="serv_cantidadColumn" msprop:Generator_UserColumnName="serv_cantidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
