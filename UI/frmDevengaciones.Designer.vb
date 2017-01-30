@@ -37,6 +37,8 @@ Partial Class frmDevengaciones
         Me.lblApellido = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbxMes = New System.Windows.Forms.ComboBox()
+        Me.lblMes = New System.Windows.Forms.Label()
         Me.btnDevengarsv = New System.Windows.Forms.Button()
         Me.btnDevengar2v = New System.Windows.Forms.Button()
         Me.btnDevengar1v = New System.Windows.Forms.Button()
@@ -197,6 +199,8 @@ Partial Class frmDevengaciones
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbxMes)
+        Me.GroupBox1.Controls.Add(Me.lblMes)
         Me.GroupBox1.Controls.Add(Me.btnDevengarsv)
         Me.GroupBox1.Controls.Add(Me.btnDevengar2v)
         Me.GroupBox1.Controls.Add(Me.btnDevengar1v)
@@ -220,6 +224,25 @@ Partial Class frmDevengaciones
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalles de la devengación"
+        '
+        'cbxMes
+        '
+        Me.cbxMes.FormattingEnabled = True
+        Me.cbxMes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cbxMes.Location = New System.Drawing.Point(735, 19)
+        Me.cbxMes.Name = "cbxMes"
+        Me.cbxMes.Size = New System.Drawing.Size(167, 21)
+        Me.cbxMes.TabIndex = 68
+        '
+        'lblMes
+        '
+        Me.lblMes.AutoSize = True
+        Me.lblMes.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMes.Location = New System.Drawing.Point(683, 20)
+        Me.lblMes.Name = "lblMes"
+        Me.lblMes.Size = New System.Drawing.Size(33, 16)
+        Me.lblMes.TabIndex = 69
+        Me.lblMes.Text = "Mes"
         '
         'btnDevengarsv
         '
@@ -456,4 +479,6 @@ Partial Class frmDevengaciones
     Friend WithEvents btnDevengarsv As System.Windows.Forms.Button
     Friend WithEvents btnDevengar2v As System.Windows.Forms.Button
     Friend WithEvents btnDevengar1v As System.Windows.Forms.Button
+    Friend WithEvents cbxMes As System.Windows.Forms.ComboBox
+    Friend WithEvents lblMes As System.Windows.Forms.Label
 End Class

@@ -7,6 +7,7 @@
         ColorearControles(Me)
         ColorearFRM(Me)
         CargarServicios()
+        CargarCuentas()
     End Sub
 
     Private Sub CargarServicios()
@@ -15,8 +16,14 @@
         cbxServicio.DataSource = DS.Tables(0)
         ' Asignar el campo a la propiedad DisplayMember del combo   
         cbxServicio.DisplayMember = DS.Tables(0).Columns(1).Caption.ToString
-        'Cargar el monto del servicio !!!!!!!!!!!!!!Esto no me sale!!!!!!!!!!!!!!!!!!!!!!
-        'txtMonto.Text = DS.Tables(0).Rows(2).ToString
+    End Sub
+
+    Private Sub CargarCuentas()
+        DS = repoFact.Cuentas_Estado()
+        ' asignar el DataSource al combobox
+        cbxCuentas.DataSource = DS.Tables(0)
+        ' Asignar el campo a la propiedad DisplayMember del combo   
+        cbxCuentas.DisplayMember = DS.Tables(0).Columns(1).Caption.ToString
     End Sub
 
     Private Sub txtFEchaFinal_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtFechaFinal.KeyPress
@@ -60,5 +67,18 @@
             visRepIngresosServicio.MdiParent = frmMainKSC
         End If
         visRepIngresosServicio.Show()
+    End Sub
+
+    Private Sub btnCuenta_Click(sender As Object, e As EventArgs) Handles btnCuenta.Click
+        visRepIngresosCuenta.fecha1 = txtFecchaInicial3.Value.ToString("yyyy-MM-dd")
+        visRepIngresosCuenta.fecha2 = txtFechaFinal3.Value.ToString("yyyy-MM-dd")
+        visRepIngresosCuenta.cuenta = cbxCuentas.Text
+        visRepIngresosCuenta.bd = db
+        If sucursal = "ZOO" Then
+            visRepIngresosCuenta.MdiParent = frmMain
+        ElseIf sucursal = "KSC" Then
+            visRepIngresosCuenta.MdiParent = frmMainKSC
+        End If
+        visRepIngresosCuenta.Show()
     End Sub
 End Class

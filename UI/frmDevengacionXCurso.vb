@@ -46,7 +46,7 @@
                 monto2 = monto
             End If
             pagoElectronico = "0000" + alumno.legajo.ToString
-            devengacion = repoDeveng.Devengar_sala(alu, txt_observaciones.Text, cbxCuenta.Text, cbxServicio.Text, monto2)
+            devengacion = repoDeveng.Devengar_sala(alu, txt_observaciones.Text, cbxCuenta.Text, cbxServicio.Text, monto2, cbxMes.SelectedText.ToString)
             nroDev = devengacion.ToString
             nroDev = nroDev.PadLeft(8, "0")
 

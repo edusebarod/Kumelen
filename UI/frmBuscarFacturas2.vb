@@ -49,9 +49,9 @@
             frmFacturas2.NroFactura = txt_nroFactura.Text
             frmFacturas2.sucursal = sucursal
             If sucursal = "ZOO" Then
-                frmFacturas.MdiParent = frmMain
+                frmFacturas2.MdiParent = frmMain
             ElseIf sucursal = "KSC" Then
-                frmFacturas.MdiParent = frmMainKSC
+                frmFacturas2.MdiParent = frmMainKSC
             End If
             frmFacturas2.Show()
         End If
@@ -63,9 +63,9 @@
         frmFacturas2.fecha = True
         frmFacturas2.sucursal = sucursal
         If sucursal = "ZOO" Then
-            frmFacturas.MdiParent = frmMain
+            frmFacturas2.MdiParent = frmMain
         ElseIf sucursal = "KSC" Then
-            frmFacturas.MdiParent = frmMainKSC
+            frmFacturas2.MdiParent = frmMainKSC
         End If
         frmFacturas2.Show()
     End Sub
@@ -81,10 +81,11 @@
                 frmFacturas2.id = res
                 frmFacturas2.sucursal = sucursal
                 If sucursal = "ZOO" Then
-                    frmFacturas.MdiParent = frmMain
+                    frmFacturas2.MdiParent = frmMain
                 ElseIf sucursal = "KSC" Then
-                    frmFacturas.MdiParent = frmMainKSC
+                    frmFacturas2.MdiParent = frmMainKSC
                 End If
+
                 frmFacturas2.Show()
             End If
         End If
@@ -94,9 +95,9 @@
         frmFacturas2.todas = True
         frmFacturas2.sucursal = sucursal
         If sucursal = "ZOO" Then
-            frmFacturas.MdiParent = frmMain
+            frmFacturas2.MdiParent = frmMain
         ElseIf sucursal = "KSC" Then
-            frmFacturas.MdiParent = frmMainKSC
+            frmFacturas2.MdiParent = frmMainKSC
         End If
         frmFacturas2.Show()
     End Sub

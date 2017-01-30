@@ -37,6 +37,8 @@ Partial Class frmDevengacionXCurso
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.cbxVencimiento = New System.Windows.Forms.ComboBox()
         Me.lblVencimientos = New System.Windows.Forms.Label()
+        Me.cbxMes = New System.Windows.Forms.ComboBox()
+        Me.lblMes = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbxCurso
@@ -70,7 +72,7 @@ Partial Class frmDevengacionXCurso
         '
         'btnDevengar
         '
-        Me.btnDevengar.Location = New System.Drawing.Point(212, 325)
+        Me.btnDevengar.Location = New System.Drawing.Point(212, 362)
         Me.btnDevengar.Name = "btnDevengar"
         Me.btnDevengar.Size = New System.Drawing.Size(98, 23)
         Me.btnDevengar.TabIndex = 48
@@ -79,7 +81,7 @@ Partial Class frmDevengacionXCurso
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(316, 325)
+        Me.btnSalir.Location = New System.Drawing.Point(316, 362)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 49
@@ -146,7 +148,7 @@ Partial Class frmDevengacionXCurso
         '
         Me.lbl_obervaciones.AutoSize = True
         Me.lbl_obervaciones.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_obervaciones.Location = New System.Drawing.Point(25, 228)
+        Me.lbl_obervaciones.Location = New System.Drawing.Point(25, 265)
         Me.lbl_obervaciones.Name = "lbl_obervaciones"
         Me.lbl_obervaciones.Size = New System.Drawing.Size(101, 16)
         Me.lbl_obervaciones.TabIndex = 56
@@ -154,7 +156,7 @@ Partial Class frmDevengacionXCurso
         '
         'txt_observaciones
         '
-        Me.txt_observaciones.Location = New System.Drawing.Point(133, 228)
+        Me.txt_observaciones.Location = New System.Drawing.Point(133, 265)
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.Size = New System.Drawing.Size(256, 77)
@@ -164,7 +166,7 @@ Partial Class frmDevengacionXCurso
         '
         Me.cbxVencimiento.FormattingEnabled = True
         Me.cbxVencimiento.Items.AddRange(New Object() {"3 vencimientos", "2 vencimientos", "1 vencimineto", "Sin vencimientos"})
-        Me.cbxVencimiento.Location = New System.Drawing.Point(133, 195)
+        Me.cbxVencimiento.Location = New System.Drawing.Point(133, 232)
         Me.cbxVencimiento.Name = "cbxVencimiento"
         Me.cbxVencimiento.Size = New System.Drawing.Size(259, 21)
         Me.cbxVencimiento.TabIndex = 59
@@ -173,17 +175,38 @@ Partial Class frmDevengacionXCurso
         '
         Me.lblVencimientos.AutoSize = True
         Me.lblVencimientos.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVencimientos.Location = New System.Drawing.Point(28, 195)
+        Me.lblVencimientos.Location = New System.Drawing.Point(28, 232)
         Me.lblVencimientos.Name = "lblVencimientos"
         Me.lblVencimientos.Size = New System.Drawing.Size(93, 16)
         Me.lblVencimientos.TabIndex = 58
         Me.lblVencimientos.Text = "Vencimientos"
         '
+        'cbxMes
+        '
+        Me.cbxMes.FormattingEnabled = True
+        Me.cbxMes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cbxMes.Location = New System.Drawing.Point(100, 194)
+        Me.cbxMes.Name = "cbxMes"
+        Me.cbxMes.Size = New System.Drawing.Size(292, 21)
+        Me.cbxMes.TabIndex = 61
+        '
+        'lblMes
+        '
+        Me.lblMes.AutoSize = True
+        Me.lblMes.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMes.Location = New System.Drawing.Point(28, 194)
+        Me.lblMes.Name = "lblMes"
+        Me.lblMes.Size = New System.Drawing.Size(33, 16)
+        Me.lblMes.TabIndex = 60
+        Me.lblMes.Text = "Mes"
+        '
         'frmDevengacionXCurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(420, 365)
+        Me.ClientSize = New System.Drawing.Size(420, 412)
+        Me.Controls.Add(Me.cbxMes)
+        Me.Controls.Add(Me.lblMes)
         Me.Controls.Add(Me.cbxVencimiento)
         Me.Controls.Add(Me.lblVencimientos)
         Me.Controls.Add(Me.txt_observaciones)
@@ -221,4 +244,6 @@ Partial Class frmDevengacionXCurso
     Friend WithEvents txt_observaciones As System.Windows.Forms.TextBox
     Friend WithEvents cbxVencimiento As System.Windows.Forms.ComboBox
     Friend WithEvents lblVencimientos As System.Windows.Forms.Label
+    Friend WithEvents cbxMes As System.Windows.Forms.ComboBox
+    Friend WithEvents lblMes As System.Windows.Forms.Label
 End Class

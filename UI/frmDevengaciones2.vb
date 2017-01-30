@@ -109,6 +109,10 @@
             MsgBox("No hay elementos en el detalle de devengaciones")
             B = False
         End If
+        If cbxMes.Text = "" Then
+            MsgBox("No se seleccinó el mes")
+            B = False
+        End If
         Return B
     End Function
 
@@ -225,7 +229,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, False)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString, False)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -245,6 +249,7 @@
                 visRepDevengacionvia2.nroDev = nroDev
                 visRepDevengacionvia2.beca = Alu.descuento.ToString
                 visRepDevengacionvia2.bd = False
+                visRepDevengacionvia2.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -336,7 +341,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, False)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString, False)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -356,6 +361,8 @@
                 visRepDevengacionvia21v.nroDev = nroDev
                 visRepDevengacionvia21v.beca = Alu.descuento.ToString
                 visRepDevengacionvia21v.bd = False
+                visRepDevengacionvia21v.mes = cbxMes.SelectedText.ToString
+
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -385,7 +392,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, False)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString, False)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -405,6 +412,7 @@
                 visRepDevengacionvia22v.nroDev = nroDev
                 visRepDevengacionvia22v.beca = Alu.descuento.ToString
                 visRepDevengacionvia22v.bd = False
+                visRepDevengacionvia22v.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -434,7 +442,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, False)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString, False)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -454,6 +462,7 @@
                 visRepDevengacionvia2sv.nroDev = nroDev
                 visRepDevengacionvia2sv.beca = Alu.descuento.ToString
                 visRepDevengacionvia2sv.bd = False
+                visRepDevengacionvia2sv.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"

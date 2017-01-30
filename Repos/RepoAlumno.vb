@@ -654,6 +654,84 @@ Public Class RepoAlumno
         Return False
     End Function
 
+    ''' <summary>
+    ''' Función devuelve true se encuenta un alumno por DNI y llena la instancia Alu con los datos de la base de datos.
+    ''' Si no encuentra un alumno devuelve False.
+    ''' </summary>
+    ''' <param name="bd">True = Vía 1, Talse = Vía 2</param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function Alumnos(Optional ByVal bd As Boolean = True) As DataSet
+        Dim conexion As New cBaseDatos
+        'Dim SQL2 As String = String.Format("SELECT p.*, a.* FROM alumnos as a, personas as p WHERE a.per_id = p.per_id AND a.alu_activo = 1 AND a.alu_baja = 0")
+        Dim DA As New MySqlClient.MySqlDataAdapter
+        Dim DS As New DataSet
+        Dim SQL As String = String.Format("SELECT p.per_apellido as Apellido," +
+                                  "p.per_nombre as Nombre, " +
+                                  "p.per_fecnac as ""Fecha de Nacimiento"", " +
+                                  "p.per_lugnac as ""Lugar de Nacimiento"", " +
+                                  "p.per_dni as DNI, " +
+                                  "p.per_sexo as Sexo, " +
+                                  "p.per_nacionalidad as Nacionalidad, " +
+                                  "p.per_domicilio as Domicilio, " +
+                                  "p.loc_id as Localidad, " +
+                                  "a.alu_legajo as Legajo, " +
+                                  "a.alu_enfermedades as Enfermedades, " +
+                                  "a.alu_alergias as Alergias, " +
+                                  "a.alu_medicacion as Medicacion, " +
+                                  "a.alu_observaciones as Observaciones, " +
+                                  "Padre, " +
+                                  "Madre, " +
+                                  "a.alu_fechabaja as ""Fecha de Baja"", " +
+                                  "a.alu_fechaalta as ""Fecha de Alta"", " +
+                                  "a.alu_ciclo as Ciclo, " +
+                                  "a.alu_tipo as Nivel, " +
+                                  "c.cur_nombre as Curso, " +
+                                  "a.alu_anolectivo as ""Año Lectivo"", " +
+                                  "a.alu_turno as Turno, " +
+                                  "a.alu_horario as Horario, " +
+                                  "a.alu_obrasocial as ""Obra Social"", " +
+                                  "a.alu_salud as Salud, " +
+                                  "a.alu_experiencia as Experiencia, " +
+                                  "a.alu_tiempo as ""Tiempo de Experiencia"", " +
+                                  "a.alu_lugarexp as ""Lugar de Experiencia"", " +
+                                  "a.alu_perRetiro as ""Persona habilitada Retiro"", " +
+                                  "a.alu_descuento as Descuento, " +
+                                  "CAST(a.alu_fDNI AS CHAR) as ""Fotocopia DNI"", " +
+                                  "CAST(a.alu_fDNIpadre AS CHAR) as ""Fotocopia DNI Padre"", " +
+                                  "CAST(a.alu_fDNImadre AS CHAR) as ""Fotocopia DNI Madre"", " +
+                                  "CAST(a.alu_fotocarnet AS CHAR) as ""Foto Carnet"", " +
+                                  "CAST(a.alu_certifsalud AS CHAR) as ""Certificado de Salud"", " +
+                                  "CAST(a.alu_fIPE AS CHAR) as ""Fotocopia IPE"", " +
+                                  "CAST(a.alu_entrevistaDOE AS CHAR) as ""Entrevista DOE"", " +
+                                  "CAST(a.alu_fichaMedica AS CHAR) as ""Ficha Medica"", " +
+                                  "CAST(a.alu_audiometria AS CHAR) as ""Audiometria"", " +
+                                  "CAST(a.alu_certificadoBD AS CHAR) as ""Certificado Buco-Dental"", " +
+                                  "a.alu_tutor as Tutor, " +
+                                  "a.alu_servdescuento as ""Servicio con Descuento"" " +
+                                  "FROM  personas as p, alumnos as a, cursos as c, " +
+                                  "(SELECT CONCAT(p2.per_apellido, "", "", p2.per_nombre) as madre, p2.per_id as madre_id FROM personas as p2) as Qmadre, " +
+                                  "(SELECT CONCAT(p3.per_apellido, "", "", p3.per_nombre) as padre, p3.per_id as padre_id FROM personas as p3) as Qpadre " +
+                                  "WHERE a.per_id = p.per_id AND a.alu_curso = c.cur_id AND madre_id = a.alu_madre AND padre_id = a.alu_padre ORDER BY Apellido ")
+        Try
+            conexion.AbrirConexion(bd)
+            DA = conexion.EjecutarConsulta(SQL)
+            conexion.CerrarConexion()
+            DA.Fill(DS)
+
+            If DS.Tables(0).Rows.Count = 0 Then
+                Return Nothing
+            Else
+                Return DS
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
+
+    End Function
+
     Public Function Traer_X_Sala(ByVal sala As Integer, ByVal turno As String, Optional ByVal bd As Boolean = True) As List(Of Integer)
         Dim conexion As New cBaseDatos
         Dim SQL As String
@@ -678,6 +756,9 @@ Public Class RepoAlumno
 
         Return alumnos
     End Function
+
+
+
     Public Function Existe(ByVal legajo As String, Optional ByVal bd As Boolean = True) As Boolean
         Dim B As Boolean = True
         Dim con As New cBaseDatos
@@ -947,7 +1028,7 @@ Public Class RepoAlumno
                             "   FROM personas AS pp, alumnos AS aa " & _
                             "    WHERE aa.alu_padre = pp.per_id " & _
                             ") as p " & _
-                            "WHERE p.per_id = a.per_id AND c.cur_id = a.alu_curso AND a.alu_madre = m.id AND a.alu_padre = p.id AND a.alu_activo = 1 AND a.alu_baja = 0" & _
+                            "WHERE p.per_id = a.per_id AND c.cur_id = a.alu_curso AND a.alu_madre = m.id AND a.alu_padre = p.id AND a.alu_activo = 1 AND a.alu_baja = 0 " & _
                             "GROUP BY Alumno " & _
                             "ORDER BY Alumno"
         Dim DA As New MySqlClient.MySqlDataAdapter

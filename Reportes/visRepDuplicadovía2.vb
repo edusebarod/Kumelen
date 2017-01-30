@@ -3,6 +3,7 @@
     Public alumno As String
     Private objrep2 As New rptDuplicadosvia2
     Public bd As New Boolean
+    Public print As Boolean
 
     Private Sub visRepDuplicado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New cBaseDatos
@@ -36,6 +37,9 @@
 
             objrep2.SetParameterValue(0, alumno)
             objrep2.SetParameterValue(1, fecha)
+            If print Then
+                objrep2.PrintToPrinter(1, False, 1, 2)
+            End If
 
             CrystalReportViewer1.ReportSource = objrep2
             CrystalReportViewer1.Refresh()

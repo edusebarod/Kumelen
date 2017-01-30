@@ -42,6 +42,8 @@ Partial Class frmFacturacionXCurso
         Me.txtEncargado = New System.Windows.Forms.TextBox()
         Me.txtObservaciones = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbxMedioPago = New System.Windows.Forms.ComboBox()
+        Me.lblMedioPago = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbxCurso
@@ -76,7 +78,7 @@ Partial Class frmFacturacionXCurso
         '
         'btnContinuar
         '
-        Me.btnContinuar.Location = New System.Drawing.Point(211, 398)
+        Me.btnContinuar.Location = New System.Drawing.Point(211, 432)
         Me.btnContinuar.Name = "btnContinuar"
         Me.btnContinuar.Size = New System.Drawing.Size(98, 23)
         Me.btnContinuar.TabIndex = 9
@@ -85,7 +87,7 @@ Partial Class frmFacturacionXCurso
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(315, 398)
+        Me.btnSalir.Location = New System.Drawing.Point(315, 432)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 10
@@ -179,7 +181,7 @@ Partial Class frmFacturacionXCurso
         Me.txtVencimiento1.Checked = False
         Me.txtVencimiento1.CustomFormat = "dd/MM/yyyy"
         Me.txtVencimiento1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.txtVencimiento1.Location = New System.Drawing.Point(148, 230)
+        Me.txtVencimiento1.Location = New System.Drawing.Point(148, 264)
         Me.txtVencimiento1.Name = "txtVencimiento1"
         Me.txtVencimiento1.ShowCheckBox = True
         Me.txtVencimiento1.Size = New System.Drawing.Size(94, 20)
@@ -190,7 +192,7 @@ Partial Class frmFacturacionXCurso
         '
         Me.lblVencimiento1.AutoSize = True
         Me.lblVencimiento1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVencimiento1.Location = New System.Drawing.Point(26, 232)
+        Me.lblVencimiento1.Location = New System.Drawing.Point(26, 266)
         Me.lblVencimiento1.Name = "lblVencimiento1"
         Me.lblVencimiento1.Size = New System.Drawing.Size(107, 16)
         Me.lblVencimiento1.TabIndex = 76
@@ -200,7 +202,7 @@ Partial Class frmFacturacionXCurso
         '
         Me.lblEncargado.AutoSize = True
         Me.lblEncargado.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEncargado.Location = New System.Drawing.Point(26, 266)
+        Me.lblEncargado.Location = New System.Drawing.Point(26, 300)
         Me.lblEncargado.Name = "lblEncargado"
         Me.lblEncargado.Size = New System.Drawing.Size(85, 16)
         Me.lblEncargado.TabIndex = 77
@@ -210,7 +212,7 @@ Partial Class frmFacturacionXCurso
         '
         Me.lblObservaciones.AutoSize = True
         Me.lblObservaciones.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblObservaciones.Location = New System.Drawing.Point(25, 302)
+        Me.lblObservaciones.Location = New System.Drawing.Point(25, 336)
         Me.lblObservaciones.Name = "lblObservaciones"
         Me.lblObservaciones.Size = New System.Drawing.Size(101, 16)
         Me.lblObservaciones.TabIndex = 78
@@ -218,7 +220,7 @@ Partial Class frmFacturacionXCurso
         '
         'txtEncargado
         '
-        Me.txtEncargado.Location = New System.Drawing.Point(147, 265)
+        Me.txtEncargado.Location = New System.Drawing.Point(147, 299)
         Me.txtEncargado.Name = "txtEncargado"
         Me.txtEncargado.Size = New System.Drawing.Size(243, 20)
         Me.txtEncargado.TabIndex = 7
@@ -226,7 +228,7 @@ Partial Class frmFacturacionXCurso
         '
         'txtObservaciones
         '
-        Me.txtObservaciones.Location = New System.Drawing.Point(147, 301)
+        Me.txtObservaciones.Location = New System.Drawing.Point(147, 335)
         Me.txtObservaciones.Multiline = True
         Me.txtObservaciones.Name = "txtObservaciones"
         Me.txtObservaciones.Size = New System.Drawing.Size(243, 56)
@@ -238,17 +240,39 @@ Partial Class frmFacturacionXCurso
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label2.Location = New System.Drawing.Point(25, 360)
+        Me.Label2.Location = New System.Drawing.Point(25, 394)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(261, 15)
         Me.Label2.TabIndex = 81
         Me.Label2.Text = "(Los campos marcados con * son obligatorios)"
         '
+        'cbxMedioPago
+        '
+        Me.cbxMedioPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxMedioPago.FormattingEnabled = True
+        Me.cbxMedioPago.Items.AddRange(New Object() {"Efectivo", "Pago Mis Cuentas", "Transferencia Bancaria", "Tarjeta de Crédito", "Tarjeta de Débito", "Otro", "-"})
+        Me.cbxMedioPago.Location = New System.Drawing.Point(140, 231)
+        Me.cbxMedioPago.Name = "cbxMedioPago"
+        Me.cbxMedioPago.Size = New System.Drawing.Size(146, 21)
+        Me.cbxMedioPago.TabIndex = 83
+        '
+        'lblMedioPago
+        '
+        Me.lblMedioPago.AutoSize = True
+        Me.lblMedioPago.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMedioPago.Location = New System.Drawing.Point(26, 231)
+        Me.lblMedioPago.Name = "lblMedioPago"
+        Me.lblMedioPago.Size = New System.Drawing.Size(113, 16)
+        Me.lblMedioPago.TabIndex = 82
+        Me.lblMedioPago.Text = "Medio de Pago *"
+        '
         'frmFacturacionXCurso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(420, 435)
+        Me.ClientSize = New System.Drawing.Size(420, 472)
+        Me.Controls.Add(Me.cbxMedioPago)
+        Me.Controls.Add(Me.lblMedioPago)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtObservaciones)
         Me.Controls.Add(Me.txtEncargado)
@@ -296,4 +320,6 @@ Partial Class frmFacturacionXCurso
     Friend WithEvents txtEncargado As System.Windows.Forms.TextBox
     Friend WithEvents txtObservaciones As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents cbxMedioPago As System.Windows.Forms.ComboBox
+    Friend WithEvents lblMedioPago As System.Windows.Forms.Label
 End Class

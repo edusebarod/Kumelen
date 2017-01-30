@@ -95,6 +95,10 @@
             MsgBox("No hay elementos en el detalle de devengaciones")
             B = False
         End If
+        If cbxMes.Text = "" Then
+            MsgBox("No se seleccinó el mes")
+            B = False
+        End If
         Return B
     End Function
 
@@ -211,6 +215,7 @@
         Dim DS As DataSet = New DataSet()
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim v1 As String = ""
+        'Dim mes As String = ""
 
         If validardev() Then
             If dgDetalle.RowCount > 0 Then
@@ -219,7 +224,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -250,6 +255,7 @@
                 visRepDevengacion.beca = beca
                 visRepDevengacion.pagoElectronico = pagoELectronico
                 visRepDevengacion.bd = True
+                visRepDevengacion.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -316,7 +322,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -347,6 +353,7 @@
                 visRepDevengacion1v.beca = beca
                 visRepDevengacion1v.pagoElectronico = pagoElectronico
                 visRepDevengacion1v.bd = True
+                visRepDevengacion1v.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -385,7 +392,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -416,6 +423,7 @@
                 visRepDevengacion2v.beca = beca
                 visRepDevengacion2v.pagoElectronico = pagoElectronico
                 visRepDevengacion2v.bd = True
+                visRepDevengacion2v.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"
@@ -454,7 +462,7 @@
                 EnableCmd(False, btnDevengar2v)
                 EnableCmd(False, btnDevengarsv)
                 Dim devengacion As Integer
-                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle)
+                devengacion = repoDeveng.Devengar(Alu.id, Convert.ToDouble(txtTotal.Text), txtObservaciones.Text, dgDetalle, cbxMes.SelectedText.ToString)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -485,6 +493,7 @@
                 visRepDevengacionsv.beca = beca
                 visRepDevengacionsv.pagoElectronico = pagoElectronico
                 visRepDevengacionsv.bd = True
+                visRepDevengacionsv.mes = cbxMes.SelectedText.ToString
 
                 limpiarControles()
                 txtTotal.Text = "0"

@@ -22,11 +22,12 @@
         ' Asignar el campo a la propiedad DisplayMember del combo   
         cbxCtaGasto.DisplayMember = DS.Tables(0).Columns(1).Caption.ToString
 
-        DS2 = repoPago.CuentasEgreso(False)
+        'DS2 = repoPago.CuentasEgreso(False)
         ' asignar el DataSource al combobox
-        cbxCtaEgreso.DataSource = DS2.Tables(0)
+        'cbxCtaEgreso.DataSource = DS2.Tables(0)
         ' Asignar el campo a la propiedad DisplayMember del combo   
-        cbxCtaEgreso.DisplayMember = DS2.Tables(0).Columns(1).Caption.ToString
+        'cbxCtaEgreso.DisplayMember = DS2.Tables(0).Columns(1).Caption.ToString
+        cbxCtaEgreso.SelectedItem = 0
     End Sub
 
 
@@ -125,5 +126,17 @@
             frmDatosNegociovia2.MdiParent = frmMainKSC
         End If
         frmDatosNegociovia2.Show()
+    End Sub
+
+    Private Sub cbxCtaEgreso_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxCtaEgreso.SelectedValueChanged
+        If InStr(cbxCtaEgreso.Text, "Banco") Then
+            chbxCheque.Enabled = True
+            chbxDebito.Enabled = True
+            chbxTransferencia.Enabled = True
+        Else
+            chbxCheque.Enabled = False
+            chbxDebito.Enabled = False
+            chbxTransferencia.Enabled = False
+        End If
     End Sub
 End Class

@@ -76,7 +76,7 @@ Public Class RepoDevengación
     'alu: id del alumno al que se le devenga
     'Total: monto total de la devengación
     'observaciones: observaciones de la devengación
-    Public Function Devengar(ByVal alu As Integer, ByVal total As Double, ByVal observaciones As String, ByVal detalle As DataGridView, Optional ByVal bd As Boolean = True) As Integer
+    Public Function Devengar(ByVal alu As Integer, ByVal total As Double, ByVal observaciones As String, ByVal detalle As DataGridView, ByVal mes As String, Optional ByVal bd As Boolean = True) As Integer
         Dim con As New cBaseDatos
         Dim DS As DataSet = New DataSet()
         Dim DS3 As DataSet = New DataSet()
@@ -155,8 +155,8 @@ Public Class RepoDevengación
         End If
 
         'se devenga 
-        SQL = String.Format("INSERT INTO `devengaciones` (`dev_id`, `dev_vencimiento1`, `dev_vencimiento2`, `dev_vencimiento3`, `per_id`, `dev_total`, `dev_fecha`, `dev_observaciones`, `dev_tipo`, `dev_cancelada`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
-                                          v1, v2, v3, alu, total, DateTime.Now.ToString("yyyy/MM/dd").ToString, observaciones, 0, 0)
+        SQL = String.Format("INSERT INTO `devengaciones` (`dev_id`, `dev_vencimiento1`, `dev_vencimiento2`, `dev_vencimiento3`, `per_id`, `dev_total`, `dev_fecha`, `dev_observaciones`, `dev_tipo`, `dev_cancelada`, `dev_mes`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}','{9}')",
+                                          v1, v2, v3, alu, total, DateTime.Now.ToString("yyyy/MM/dd").ToString, observaciones, 0, 0, mes)
         Try
             con.AbrirConexion(bd)
             result = con.EjecutarComando(SQL)
@@ -231,7 +231,7 @@ Public Class RepoDevengación
     'cuenta: cuenta contra la cual se devenga 
     'concepto: concepto por el que se devenga 
     'monto: monto de la devengación
-    Public Function Devengar_sala(ByVal alu As Integer, ByVal observaciones As String, ByVal cuenta As String, ByVal concepto As String, ByVal monto As Decimal, Optional ByVal bd As Boolean = True) As Integer
+    Public Function Devengar_sala(ByVal alu As Integer, ByVal observaciones As String, ByVal cuenta As String, ByVal concepto As String, ByVal monto As Decimal, ByVal mes As String, Optional ByVal bd As Boolean = True) As Integer
         Dim con As New cBaseDatos
         Dim DS As DataSet = New DataSet()
         Dim DA As New MySqlClient.MySqlDataAdapter
@@ -306,8 +306,8 @@ Public Class RepoDevengación
         End If
 
         'se devenga 
-        SQL = String.Format("INSERT INTO `devengaciones` (`dev_id`, `dev_vencimiento1`, `dev_vencimiento2`, `dev_vencimiento3`, `per_id`, `dev_total`, `dev_fecha`, `dev_observaciones`, `dev_tipo`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",
-                                          v1, v2, v3, alu, monto, DateTime.Now.ToString("yyyy/MM/dd").ToString, observaciones, 0)
+        SQL = String.Format("INSERT INTO `devengaciones` (`dev_id`, `dev_vencimiento1`, `dev_vencimiento2`, `dev_vencimiento3`, `per_id`, `dev_total`, `dev_fecha`, `dev_observaciones`, `dev_tipo`, `dev_mes`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')",
+                                          v1, v2, v3, alu, monto, DateTime.Now.ToString("yyyy/MM/dd").ToString, observaciones, 0, mes)
         Try
             con.AbrirConexion(bd)
             result = con.EjecutarComando(SQL)
@@ -443,10 +443,30 @@ Public Class RepoDevengación
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim DS As DataSet = New DataSet()
         If idAlumno = 0 Then
-            SQL = "SELECT dd.serv_nombre, d.dev_observaciones, dd.dde_monto, dd.dev_id, CONVERT(dev_fecha, CHAR(20)) AS dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno"
+            SQL = "SELECT dd.serv_nombre, d.dev_observaciones, dd.dde_monto, dd.dev_id, d.dev_mesCONVERT(dev_fecha, CHAR(20)) AS dev_fecha, d.dev_mes as Mes, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno"
         Else
-            SQL = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, dd.dde_monto, dd.dev_id, CONVERT(dev_fecha, CHAR(20)) AS dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND p.per_id = {0} AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno", idAlumno)
+            SQL = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, dd.dde_monto, dd.dev_id, CONVERT(dev_fecha, CHAR(20)) AS dev_fecha, d.dev_mes as Mes, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND p.per_id = {0} AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno", idAlumno)
         End If
+        Try
+            conexion.AbrirConexion(bd)
+            DA = conexion.EjecutarConsulta(SQL)
+            conexion.CerrarConexion()
+            DA.Fill(DS)
+            Return DS
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return DS
+    End Function
+
+    'Devuelve un dataset con todas las devengaciones no canceladas
+    Public Function Devengaciones_NoCanceladas(Optional ByVal bd As Boolean = True) As DataSet
+        Dim conexion As New cBaseDatos
+        Dim SQL As String
+        Dim DA As New MySqlClient.MySqlDataAdapter
+        Dim DS As DataSet = New DataSet()
+
+        SQL = "SELECT CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni as dni, c.cur_nombre as curso, dd.serv_nombre as concepto, dd.dde_monto as monto, CONVERT(dev_fecha, CHAR(20)) AS fecha FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND a.alu_activo = 1 AND a.alu_baja = 0 ORDER BY alumno"
         Try
             conexion.AbrirConexion(bd)
             DA = conexion.EjecutarConsulta(SQL)
@@ -482,6 +502,26 @@ Public Class RepoDevengación
         Return DS
     End Function
 
+    'Devuelve un dataset con las devengaciones no anuladas por id del alumno, si el id es 0
+    Public Function Devengaciones_NoAnuladas_Curso(ByVal curso As Integer, Optional ByVal bd As Boolean = True) As DataSet
+        Dim conexion As New cBaseDatos
+        Dim SQL As String
+        Dim DA As New MySqlClient.MySqlDataAdapter
+        Dim DS As DataSet = New DataSet()
+
+        SQL = String.Format("SELECT dd.dev_id, dde_id, CONVERT(dev_fecha, CHAR(20)) AS dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as Alumno, per_dni, serv_nombre, dd.dde_monto, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengaciones as d, devengacionesdetalles as dd, personas as p, alumnos as a, cursos as c WHERE p.per_id = a.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND a.alu_curso = {0} AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND a.alu_activo = 1 AND a.alu_baja = 0 ORDER BY alumno", curso)
+
+        Try
+            conexion.AbrirConexion(bd)
+            DA = conexion.EjecutarConsulta(SQL)
+            conexion.CerrarConexion()
+            DA.Fill(DS)
+            Return DS
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return DS
+    End Function
     'Devuelve un dataset con una devengacion
     Public Function DevengacionXid(ByVal idDevengacion As Integer, Optional ByVal bd As Boolean = True) As DataSet
         Dim conexion As New cBaseDatos
@@ -537,7 +577,7 @@ Public Class RepoDevengación
         Return result
     End Function
 
-    'Devuelve el id de la persona asociada a un devebgacion, a traves del id de la misma
+    'Devuelve el id de la persona asociada a un devengacion, a traves del id de la misma
     Public Function Id_persona(ByVal id_dev As Integer, Optional ByVal bd As Boolean = True) As Integer
         Dim conexion As New cBaseDatos
         Dim SQL As String = String.Format("SELECT per_id FROM devengaciones as d WHERE d.dev_id = {0}", id_dev)
@@ -584,7 +624,7 @@ Public Class RepoDevengación
     'Devuelve un dataset con las devengaciones y sus detalle en un rango de fechas
     Public Function Devengaciones_Fecha(ByVal fecha1 As String, ByVal fecha2 As String, Optional ByVal bd As Boolean = True) As DataSet
         Dim conexion As New cBaseDatos
-        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengacionesdetalles as dd, devengaciones as d, personas as p, alumnos as a, cursos as c WHERE a.per_id = p.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND dev_fecha BETWEEN '{0}' AND '{1}' ORDER BY alumno", fecha1, fecha2)
+        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, d.dev_mes, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengacionesdetalles as dd, devengaciones as d, personas as p, alumnos as a, cursos as c WHERE a.per_id = p.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND dev_fecha BETWEEN '{0}' AND '{1}' ORDER BY alumno", fecha1, fecha2)
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim DS As DataSet = New DataSet()
         Try
@@ -602,7 +642,7 @@ Public Class RepoDevengación
     'Devuelve un dataset con las devenagciones y sus detalles por nro de devengacion
     Public Function Devengaciones_NroDevengacion(ByVal nro_devengacion As Integer, Optional ByVal bd As Boolean = True) As DataSet
         Dim conexion As New cBaseDatos
-        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3  FROM devengacionesdetalles as dd, devengaciones as d, personas as p, alumnos as a , cursos as c WHERE a.per_id = p.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND d.dev_id = {0} ORDER BY alumno", nro_devengacion)
+        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, d.dev_mes, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, a.alu_descuento, c.cur_nombre, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3  FROM devengacionesdetalles as dd, devengaciones as d, personas as p, alumnos as a , cursos as c WHERE a.per_id = p.per_id AND d.per_id = p.per_id AND a.alu_curso = c.cur_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 AND d.dev_id = {0} ORDER BY alumno", nro_devengacion)
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim DS As DataSet = New DataSet()
         Try
@@ -620,7 +660,7 @@ Public Class RepoDevengación
     'Devuelve un dataset con las devengaciones y sus detalles 
     Public Function Devengaciones(Optional ByVal bd As Boolean = True) As DataSet
         Dim conexion As New cBaseDatos
-        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengacionesdetalles as dd, devengaciones as d, personas as p WHERE d.per_id = p.per_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno")
+        Dim SQL As String = String.Format("SELECT dd.serv_nombre, d.dev_observaciones, d.dev_total, d.dev_id, dev_fecha, d.dev_mes, CONCAT(per_apellido, ', ', per_nombre) as alumno, per_dni, dev_vencimiento1, dev_vencimiento2, dev_vencimiento3 FROM devengacionesdetalles as dd, devengaciones as d, personas as p WHERE d.per_id = p.per_id AND d.dev_id = dd.dev_id AND dd.dde_cancelada = 0 AND d.dev_anulada = 0 ORDER BY alumno")
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim DS As DataSet = New DataSet()
         Try

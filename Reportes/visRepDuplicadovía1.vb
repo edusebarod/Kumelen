@@ -3,15 +3,17 @@
     Public alumno As String
     Private objrep2 As New rptDuplicadosvia1
     Public bd As New Boolean
+    Public print As Boolean
 
     Private Sub visRepDuplicado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New cBaseDatos
-        Dim SQL As String = String.Format("SELECT m.mov_encargado, CONVERT(m.mov_fecha, CHAR) as mov_fecha, m.mov_total, m.mov_pto_venta, m.mov_nro_factura, m.mov_obs, m.mov_id, m.per_id, m.mov_sala FROM movimientos as m WHERE m.mov_id = {0}; SELECT md.mde_monto, md.mde_concepto FROM movimientosdetalles as md WHERE md.mov_id = {1}", idFactura, idFactura)
+        Dim SQL As String = String.Format("SELECT m.mov_encargado, CONVERT(m.mov_fecha, CHAR) as mov_fecha, m.mov_total, m.mov_pto_venta, m.mov_nro_factura, m.mov_obs, m.mov_id, m.per_id, m.mov_sala FROM movimientos as m WHERE m.mov_id = {0}; SELECT md.mde_monto, md.mde_concepto, md.mov_id FROM movimientosdetalles as md WHERE md.mov_id = {1}", idFactura, idFactura)
         Dim DA As New MySqlClient.MySqlDataAdapter
         Dim DS As DataSet = New DataSet()
         Dim DS2 As DataSet = New DataSet()
         Dim fecha As String
         bd = True
+
         Try
             conexion.AbrirConexion(bd)
             DA = conexion.EjecutarConsulta(SQL)
@@ -35,6 +37,9 @@
 
             objrep2.SetParameterValue(0, alumno)
             objrep2.SetParameterValue(1, fecha)
+            If print Then
+                objrep2.PrintToPrinter(1, False, 1, 2)
+            End If
 
             CrystalReportViewer1.ReportSource = objrep2
             CrystalReportViewer1.Refresh()

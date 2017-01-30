@@ -28,6 +28,7 @@ Partial Class visRepDuplicadovía1
         'CrystalReportViewer1
         '
         Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -35,6 +36,7 @@ Partial Class visRepDuplicadovía1
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(1008, 729)
         Me.CrystalReportViewer1.TabIndex = 0
+        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'visRepDuplicadovía1
         '

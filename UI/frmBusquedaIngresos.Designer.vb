@@ -38,8 +38,18 @@ Partial Class frmBusquedaIngresos
         Me.txtFecchaInicial2 = New System.Windows.Forms.DateTimePicker()
         Me.lblServicio = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbxCuentas = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtFechaFinal3 = New System.Windows.Forms.DateTimePicker()
+        Me.btnCuenta = New System.Windows.Forms.Button()
+        Me.txtFecchaInicial3 = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.gb_Fecha.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_fecha
@@ -132,7 +142,7 @@ Partial Class frmBusquedaIngresos
         Me.GroupBox1.Size = New System.Drawing.Size(557, 150)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Búsqueda Servicio"
+        Me.GroupBox1.Text = "Búsqueda por Servicio"
         '
         'lblFEchaFinal2
         '
@@ -212,11 +222,107 @@ Partial Class frmBusquedaIngresos
         Me.Label3.TabIndex = 11
         Me.Label3.Text = "Intervalo de Fechas"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.cbxCuentas)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.txtFechaFinal3)
+        Me.GroupBox2.Controls.Add(Me.btnCuenta)
+        Me.GroupBox2.Controls.Add(Me.txtFecchaInicial3)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 304)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(557, 150)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Búsqueda por Cuenta Contable"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(188, 108)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(12, 13)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "y"
+        '
+        'cbxCuentas
+        '
+        Me.cbxCuentas.FormattingEnabled = True
+        Me.cbxCuentas.Location = New System.Drawing.Point(70, 26)
+        Me.cbxCuentas.Name = "cbxCuentas"
+        Me.cbxCuentas.Size = New System.Drawing.Size(432, 21)
+        Me.cbxCuentas.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(188, 77)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(32, 13)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Entre"
+        '
+        'txtFechaFinal3
+        '
+        Me.txtFechaFinal3.Checked = False
+        Me.txtFechaFinal3.CustomFormat = "dd/MM/yyyy"
+        Me.txtFechaFinal3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txtFechaFinal3.Location = New System.Drawing.Point(242, 108)
+        Me.txtFechaFinal3.Name = "txtFechaFinal3"
+        Me.txtFechaFinal3.ShowCheckBox = True
+        Me.txtFechaFinal3.Size = New System.Drawing.Size(94, 20)
+        Me.txtFechaFinal3.TabIndex = 13
+        '
+        'btnCuenta
+        '
+        Me.btnCuenta.Image = Global.Kumelen.My.Resources.Resources.buscar
+        Me.btnCuenta.Location = New System.Drawing.Point(505, 79)
+        Me.btnCuenta.Margin = New System.Windows.Forms.Padding(0)
+        Me.btnCuenta.Name = "btnCuenta"
+        Me.btnCuenta.Size = New System.Drawing.Size(40, 42)
+        Me.btnCuenta.TabIndex = 3
+        Me.btnCuenta.UseVisualStyleBackColor = True
+        '
+        'txtFecchaInicial3
+        '
+        Me.txtFecchaInicial3.Checked = False
+        Me.txtFecchaInicial3.CustomFormat = "dd/MM/yyyy"
+        Me.txtFecchaInicial3.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txtFecchaInicial3.Location = New System.Drawing.Point(242, 71)
+        Me.txtFecchaInicial3.Name = "txtFecchaInicial3"
+        Me.txtFecchaInicial3.ShowCheckBox = True
+        Me.txtFecchaInicial3.Size = New System.Drawing.Size(94, 20)
+        Me.txtFecchaInicial3.TabIndex = 12
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(6, 26)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 17)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Cuenta"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(12, 75)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(132, 17)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Intervalo de Fechas"
+        '
         'frmBusquedaIngresos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 292)
+        Me.ClientSize = New System.Drawing.Size(584, 464)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gb_Fecha)
         Me.Name = "frmBusquedaIngresos"
@@ -225,6 +331,8 @@ Partial Class frmBusquedaIngresos
         Me.gb_Fecha.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -244,4 +352,13 @@ Partial Class frmBusquedaIngresos
     Friend WithEvents txtFechaFinal2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents txtFecchaInicial2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbxCuentas As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtFechaFinal3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnCuenta As System.Windows.Forms.Button
+    Friend WithEvents txtFecchaInicial3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

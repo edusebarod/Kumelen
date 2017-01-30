@@ -68,6 +68,7 @@
         ElseIf sucursal = "KSC" Then
             visRepDuplicadovía1.MdiParent = frmMainKSC
         End If
+        visRepDuplicadovía1.print = False
         visRepDuplicadovía1.Show()
     End Sub
 End Class

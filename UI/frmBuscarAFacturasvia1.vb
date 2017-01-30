@@ -82,6 +82,7 @@
                 ElseIf sucursal = "KSC" Then
                     frmAnularFacturas.MdiParent = frmMainKSC
                 End If
+                frmAnularFacturas.bd = True
                 frmAnularFacturas.Show()
             End If
         End If

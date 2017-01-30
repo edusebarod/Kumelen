@@ -34,6 +34,7 @@
             frmFacturacionMasiva.vencimiento = txtVencimiento1.Text
             frmFacturacionMasiva.encargado = txtEncargado.Text
             frmFacturacionMasiva.observaciones = txtObservaciones.Text
+            frmFacturacionMasiva.medioPago = cbxMedioPago.SelectedText
             If sucursal = "ZOO" Then
                 frmFacturacionMasiva.MdiParent = frmMain
             ElseIf sucursal = "KSC" Then

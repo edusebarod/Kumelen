@@ -153,6 +153,14 @@
     <Compile Include="Clases\Producto.vb" />
     <Compile Include="Clases\Usuario.vb" />
     <Compile Include="Constantes.vb" />
+    <Compile Include="Dataset\dsDeudaGeneral.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDeudaGeneral.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\dsDeudaGeneral.vb">
+      <DependentUpon>dsDeudaGeneral.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Dataset\dsDevengacionesAlumnos.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -327,6 +335,54 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MySqlConnection.vb" />
+    <Compile Include="Reportes\rptDuplicadosvia1_N.vb">
+      <DependentUpon>rptDuplicadosvia1_N.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptFacturacion1_N.vb">
+      <DependentUpon>rptFacturacion1_N.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\visRepDeudaGeneral.Designer.vb">
+      <DependentUpon>visRepDeudaGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\visRepDeudaGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptDeudaGeneral.vb">
+      <DependentUpon>rptDeudaGeneral.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\rptDeudaCurso.vb">
+      <DependentUpon>rptDeudaCurso.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\visRepDeudaCurso.Designer.vb">
+      <DependentUpon>visRepDeudaCurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\visRepDeudaCurso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\visRepIngresosCuenta.Designer.vb">
+      <DependentUpon>visRepIngresosCuenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\visRepIngresosCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptIngresosCuenta.vb">
+      <DependentUpon>rptIngresosCuenta.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reportes\rptMovimientos.vb">
       <DependentUpon>rptMovimientos.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -929,6 +985,24 @@
     <Compile Include="Repos\RepoRetiroAlumno.vb" />
     <Compile Include="Repos\RepoUsuario.vb" />
     <Compile Include="Repos\RepoVencimiento.vb" />
+    <Compile Include="UI\frmLegajos.Designer.vb">
+      <DependentUpon>frmLegajos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmLegajos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBusquedaDeudaCursovia2.Designer.vb">
+      <DependentUpon>frmBusquedaDeudaCursovia2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBusquedaDeudaCursovia2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBusquedaDeudaCursovia1.Designer.vb">
+      <DependentUpon>frmBusquedaDeudaCursovia1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBusquedaDeudaCursovia1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\frmBuscarMovimientos.Designer.vb">
       <DependentUpon>frmBuscarMovimientos.vb</DependentUpon>
     </Compile>
@@ -1205,12 +1279,6 @@
     <Compile Include="UI\frmFacturacionvia2.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\frmDevengaciones3.Designer.vb">
-      <DependentUpon>frmDevengaciones3.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UI\frmDevengaciones3.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UI\frmDeudaAlumno.Designer.vb">
       <DependentUpon>frmDeudaAlumno.vb</DependentUpon>
     </Compile>
@@ -1452,6 +1520,35 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptDuplicadosvia1_N.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDuplicadosvia1_N.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptFacturacion1_N.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturacion1_N.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\visRepDeudaGeneral.resx">
+      <DependentUpon>visRepDeudaGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptDeudaGeneral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDeudaGeneral.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptDeudaCurso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDeudaCurso.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\visRepDeudaCurso.resx">
+      <DependentUpon>visRepDeudaCurso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\visRepIngresosCuenta.resx">
+      <DependentUpon>visRepIngresosCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptIngresosCuenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptIngresosCuenta.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptMovimientos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1795,6 +1892,15 @@
     <EmbeddedResource Include="Reportes\visRepServicios.resx">
       <DependentUpon>visRepServicios.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmLegajos.resx">
+      <DependentUpon>frmLegajos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBusquedaDeudaCursovia2.resx">
+      <DependentUpon>frmBusquedaDeudaCursovia2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBusquedaDeudaCursovia1.resx">
+      <DependentUpon>frmBusquedaDeudaCursovia1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmBuscarMovimientos.resx">
       <DependentUpon>frmBuscarMovimientos.vb</DependentUpon>
     </EmbeddedResource>
@@ -1932,9 +2038,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmFacturacionvia2.resx">
       <DependentUpon>frmFacturacionvia2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\frmDevengaciones3.resx">
-      <DependentUpon>frmDevengaciones3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmDeudaAlumno.resx">
       <DependentUpon>frmDeudaAlumno.vb</DependentUpon>
@@ -2157,6 +2260,17 @@
     </None>
     <None Include="Dataset\dsCursos.xss">
       <DependentUpon>dsCursos.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsDeudaGeneral.xsc">
+      <DependentUpon>dsDeudaGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\dsDeudaGeneral.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDeudaGeneral.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dataset\dsDeudaGeneral.xss">
+      <DependentUpon>dsDeudaGeneral.xsd</DependentUpon>
     </None>
     <None Include="Dataset\dsDevengacionesAlumnos.xsc">
       <DependentUpon>dsDevengacionesAlumnos.xsd</DependentUpon>

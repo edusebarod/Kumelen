@@ -19,36 +19,36 @@
         fecha2_f = fechahasta.ToString("yyyy-MM-dd")
 
         If fechadesde = fechahasta Then
-            SQL = String.Format("(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, md.mde_concepto as concepto, mov_sala as sala, CONCAT(p.per_apellido, ', ', p.per_nombre) as alumno, md.mde_monto as ingreso , '' as egreso, md.cue_nombre as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura " +
+            SQL = String.Format("(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, md.mde_concepto as concepto, mov_sala as sala, CONCAT(p.per_apellido, ', ', p.per_nombre) as alumno, md.mde_monto as ingreso , '' as egreso, md.cue_nombre as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM `movimientos` as m, movimientosdetalles as md, personas as p " +
                                 "WHERE m.mov_id = md.mov_id AND m.per_id = p.per_id AND m.mov_tipo = 1 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0} 00:00' AND '{1} 23:59') " +
                                 "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, m.mov_concepto as concepto, mov_sala as sala, dn.razon_social as alumno, '' as ingreso, m.mov_total as egreso, m.mov_cuentaHaber as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, m.mov_concepto as concepto, mov_sala as sala, dn.razon_social as alumno, '' as ingreso, m.mov_total as egreso, m.mov_cuentaHaber as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM `movimientos` as m,  datosnegocio as dn " +
                                 "WHERE m.per_id = dn.id AND m.mov_tipo = 0 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0} 00:00' AND '{1} 23:59') " +
                                 "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno, m.mov_total AS ingreso,  '' AS egreso, m.mov_cuentaDebe AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno, m.mov_total AS ingreso,  '' AS egreso, m.mov_cuentaDebe AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM  `movimientos` AS m " +
                                 "WHERE m.mov_tipo = 2 AND m.mov_anulada =0 AND m.mov_fecha BETWEEN '{0} 00:00' AND  '{1} 23:59') " +
                                 "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno,  '' AS ingreso, m.mov_total AS egreso, m.mov_cuentaHaber AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno,  '' AS ingreso, m.mov_total AS egreso, m.mov_cuentaHaber AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM  `movimientos` AS m " +
                                 "WHERE m.mov_tipo = 3 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0} 00:00' AND '{1} 23:59') " +
                                 "ORDER BY fecha ASC", fecha1_f, fecha2_f)
         Else
-            SQL = String.Format("(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, md.mde_concepto as concepto, mov_sala as sala, CONCAT(p.per_apellido, ', ', p.per_nombre) as alumno, md.mde_monto as ingreso , '' as egreso, md.cue_nombre as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura  " +
+            SQL = String.Format("(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, md.mde_concepto as concepto, mov_sala as sala, CONCAT(p.per_apellido, ', ', p.per_nombre) as alumno, md.mde_monto as ingreso , '' as egreso, md.cue_nombre as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM `movimientos` as m, movimientosdetalles as md, personas as p " +
                                 "WHERE m.mov_id = md.mov_id AND m.per_id = p.per_id AND m.mov_tipo = 1 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0}' AND '{1}') " +
                                 "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, m.mov_concepto as concepto, mov_sala as sala, dn.razon_social as alumno, '' as ingreso, m.mov_total as egreso, m.mov_cuentaHaber as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) as fecha, CAST(mov_tipo as CHAR) as tipo, m.mov_concepto as concepto, mov_sala as sala, dn.razon_social as alumno, '' as ingreso, m.mov_total as egreso, m.mov_cuentaHaber as cuenta, m.mov_obs as observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM `movimientos` as m, datosnegocio as dn " +
                                 "WHERE m.per_id = dn.id AND m.mov_tipo = 0 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0}' AND '{1}') " +
                                  "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno, m.mov_total AS ingreso,  '' AS egreso, m.mov_cuentaDebe AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno, m.mov_total AS ingreso,  '' AS egreso, m.mov_cuentaDebe AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM  `movimientos` AS m " +
                                 "WHERE m.mov_tipo = 2 AND m.mov_anulada =0 AND m.mov_fecha BETWEEN '{0}' AND  '{1}') " +
                                 "UNION " +
-                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno,  '' AS ingreso, m.mov_total AS egreso, m.mov_cuentaHaber AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura  " +
+                                "(SELECT CAST(mov_fecha as CHAR) AS fecha, CAST(mov_tipo as CHAR) AS tipo, m.mov_concepto AS concepto, mov_sala AS sala,  '' AS alumno,  '' AS ingreso, m.mov_total AS egreso, m.mov_cuentaHaber AS cuenta, m.mov_obs AS observaciones, mov_nro_factura as nroFactura, mov_medioPago as medioPago " +
                                 "FROM  `movimientos` AS m " +
                                 "WHERE m.mov_tipo = 3 AND m.mov_anulada = 0 AND m.mov_fecha BETWEEN '{0}' AND '{1}') " +
                                 "ORDER BY fecha ASC", fecha1_f, fecha2_f)

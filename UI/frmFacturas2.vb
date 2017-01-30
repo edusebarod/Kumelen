@@ -63,10 +63,11 @@
     Private Sub dgFacturas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgFacturas.CellDoubleClick
         visRepFacturacionvia2.idFactura = dgFacturas.Rows(e.RowIndex).Cells(0).Value
         If sucursal = "ZOO" Then
-            visRepDuplicadovía2.MdiParent = frmMain
+            visRepFacturacionvia2.MdiParent = frmMain
         ElseIf sucursal = "KSC" Then
-            visRepDuplicadovía2.MdiParent = frmMainKSC
+            visRepFacturacionvia2.MdiParent = frmMainKSC
         End If
+        visRepFacturacionvia2.print = False
         visRepFacturacionvia2.Show()
     End Sub
 End Class

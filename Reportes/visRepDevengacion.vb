@@ -11,6 +11,7 @@
     Public objrep As New rptDevengacion
     Public xsala As Boolean 'si es una devengacion por sala, no se previsualiza
     Public bd As Boolean
+    Public mes As String
 
     Private Sub visRepDevengacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conexion As New cBaseDatos
@@ -39,6 +40,7 @@
             objrep.SetParameterValue(5, beca)
             objrep.SetParameterValue(6, pagoElectronico)
             objrep.SetParameterValue(7, fecha)
+            objrep.SetParameterValue(8, mes)
             If xsala Then
                 objrep.PrintToPrinter(1, False, 0, 0)
             Else

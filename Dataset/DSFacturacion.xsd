@@ -14,7 +14,7 @@
   <xs:element name="dsFacturacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFacturacion" msprop:Generator_UserDSName="dsFacturacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="movimientos" msprop:Generator_TableClassName="movimientosDataTable" msprop:Generator_TableVarName="tablemovimientos" msprop:Generator_TablePropName="movimientos" msprop:Generator_RowDeletingName="movimientosRowDeleting" msprop:Generator_RowChangingName="movimientosRowChanging" msprop:Generator_RowEvHandlerName="movimientosRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosRowDeleted" msprop:Generator_UserTableName="movimientos" msprop:Generator_RowChangedName="movimientosRowChanged" msprop:Generator_RowEvArgName="movimientosRowChangeEvent" msprop:Generator_RowClassName="movimientosRow">
+        <xs:element name="movimientos" msprop:Generator_TableClassName="movimientosDataTable" msprop:Generator_TableVarName="tablemovimientos" msprop:Generator_RowChangedName="movimientosRowChanged" msprop:Generator_TablePropName="movimientos" msprop:Generator_RowDeletingName="movimientosRowDeleting" msprop:Generator_RowChangingName="movimientosRowChanging" msprop:Generator_RowEvHandlerName="movimientosRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosRowDeleted" msprop:Generator_RowClassName="movimientosRow" msprop:Generator_UserTableName="movimientos" msprop:Generator_RowEvArgName="movimientosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="mov_encargado" msprop:Generator_ColumnVarNameInTable="columnmov_encargado" msprop:Generator_ColumnPropNameInRow="mov_encargado" msprop:Generator_ColumnPropNameInTable="mov_encargadoColumn" msprop:Generator_UserColumnName="mov_encargado" type="xs:string" minOccurs="0" />
@@ -29,15 +29,21 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="movimientosdetalles" msprop:Generator_TableClassName="movimientosdetallesDataTable" msprop:Generator_TableVarName="tablemovimientosdetalles" msprop:Generator_TablePropName="movimientosdetalles" msprop:Generator_RowDeletingName="movimientosdetallesRowDeleting" msprop:Generator_RowChangingName="movimientosdetallesRowChanging" msprop:Generator_RowEvHandlerName="movimientosdetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosdetallesRowDeleted" msprop:Generator_UserTableName="movimientosdetalles" msprop:Generator_RowChangedName="movimientosdetallesRowChanged" msprop:Generator_RowEvArgName="movimientosdetallesRowChangeEvent" msprop:Generator_RowClassName="movimientosdetallesRow">
+        <xs:element name="movimientosdetalles" msprop:Generator_TableClassName="movimientosdetallesDataTable" msprop:Generator_TableVarName="tablemovimientosdetalles" msprop:Generator_RowChangedName="movimientosdetallesRowChanged" msprop:Generator_TablePropName="movimientosdetalles" msprop:Generator_RowDeletingName="movimientosdetallesRowDeleting" msprop:Generator_RowChangingName="movimientosdetallesRowChanging" msprop:Generator_RowEvHandlerName="movimientosdetallesRowChangeEventHandler" msprop:Generator_RowDeletedName="movimientosdetallesRowDeleted" msprop:Generator_RowClassName="movimientosdetallesRow" msprop:Generator_UserTableName="movimientosdetalles" msprop:Generator_RowEvArgName="movimientosdetallesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="mde_monto" msprop:Generator_ColumnVarNameInTable="columnmde_monto" msprop:Generator_ColumnPropNameInRow="mde_monto" msprop:Generator_ColumnPropNameInTable="mde_montoColumn" msprop:Generator_UserColumnName="mde_monto" type="xs:string" minOccurs="0" />
               <xs:element name="mde_concepto" msprop:Generator_ColumnVarNameInTable="columnmde_concepto" msprop:Generator_ColumnPropNameInRow="mde_concepto" msprop:Generator_ColumnPropNameInTable="mde_conceptoColumn" msprop:Generator_UserColumnName="mde_concepto" type="xs:string" minOccurs="0" />
+              <xs:element name="mov_id" msprop:Generator_ColumnVarNameInTable="columnmov_id" msprop:Generator_ColumnPropNameInRow="mov_id" msprop:Generator_ColumnPropNameInTable="mov_idColumn" msprop:Generator_UserColumnName="mov_id" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="movimientosdetalles_movimientos" msdata:parent="movimientos" msdata:child="movimientosdetalles" msdata:parentkey="mov_id" msdata:childkey="mov_id" msprop:Generator_UserChildTable="movimientosdetalles" msprop:Generator_ChildPropName="GetmovimientosdetallesRows" msprop:Generator_UserRelationName="movimientosdetalles_movimientos" msprop:Generator_ParentPropName="movimientosRow" msprop:Generator_RelationVarName="relationmovimientosdetalles_movimientos" msprop:Generator_UserParentTable="movimientos" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

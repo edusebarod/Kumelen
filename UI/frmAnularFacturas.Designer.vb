@@ -55,7 +55,7 @@ Partial Class frmAnularFacturas
         Me.Controls.Add(Me.dgFacturas)
         Me.Name = "frmAnularFacturas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.Text = "Devengaciones No Canceladas"
+        Me.Text = "Anular Facturas"
         CType(Me.dgFacturas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

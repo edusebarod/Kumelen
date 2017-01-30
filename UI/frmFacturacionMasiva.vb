@@ -8,6 +8,7 @@
     Public vencimiento As String
     Public encargado As String
     Public observaciones As String
+    Public medioPago As String
     Private repoalum As New RepoAlumno
 
     Private Sub frmDevengacionesD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -109,7 +110,7 @@
                     If encargado = "" Then
                         encargado = repoalum.tutor(row.Cells(4).Value)
                     End If
-                    factura = repoFact.FacturarAlu(row.Cells(4).Value, dev_id, encargado, cuenta, servicio, ptoVenta, total, observaciones)
+                    factura = repoFact.FacturarAlu(row.Cells(4).Value, dev_id, encargado, cuenta, servicio, ptoVenta, total, observaciones, sala, medioPago)
 
                     Try
                         conexion.AbrirConexion(db)

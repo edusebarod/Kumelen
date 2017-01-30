@@ -18,7 +18,9 @@
         EnableCmd(False, btnAdd)
         EnableCmd(False, btnDel)
         EnableCmd(False, btnFacturar)
-        CargarCuentas()
+        cbxCuenta.SelectedIndex = cbxCuenta.FindStringExact("Caja Efectivo")
+        cbxMedioPago.SelectedIndex = cbxMedioPago.FindStringExact("Efectivo")
+        'CargarCuentas()
         'selecciona el punto de venta 002 como predeterminado
         cbxPtoVta.SelectedIndex() = 0
         flag = True
@@ -103,10 +105,10 @@
             ColorearValidacion(True, lblNombre)
             B = False
         End If
-        If txtEncargado.Text = "" Then
-            ColorearValidacion(True, lblEncargado)
-            B = False
-        End If
+        'If txtEncargado.Text = "" Then
+        'ColorearValidacion(True, lblEncargado)
+        'B = False
+        'End If
         If txtSala.Text = "" Then
             ColorearValidacion(True, lblSala)
             B = False
@@ -119,7 +121,10 @@
             ColorearValidacion(True, lblPtoVta)
             B = False
         End If
-
+        If cbxMedioPago.Text = "" Then
+            ColorearValidacion(True, lblMedioPago)
+            B = False
+        End If
         Return B
     End Function
 
@@ -232,7 +237,7 @@
             If dgDetalle.RowCount > 0 Then
                 EnableCmd(False, btnFacturar)
                 Dim factura As Integer
-                factura = repoFact.Facturar(Alu.id, txtEncargado.Text, Convert.ToDouble(txtTotal.Text), cbxPtoVta.Text, txtObservaciones.Text, txtSala.Text, dgDetalle, False)
+                factura = repoFact.Facturar(Alu.id, txtEncargado.Text, Convert.ToDouble(txtTotal.Text), cbxPtoVta.Text, txtObservaciones.Text, txtSala.Text, dgDetalle, cbxMedioPago.SelectedText, False)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -243,6 +248,7 @@
                 visRepFacturacionvia2.alumno = String.Format("{0}, {1}", txtApellido.Text, txtNombre.Text)
                 visRepFacturacionvia2.sala = repo.Sala(Alu.curso)
                 visRepFacturacionvia2.bd = False
+                visRepFacturacionvia2.print = True
                 'visRepDuplicadovía2.idFactura = factura
                 'visRepDuplicadovía2.alumno = String.Format("{0}, {1}", txtApellido.Text, txtNombre.Text)
                 'visRepDuplicadovía2.sala = repo.Sala(Alu.curso)

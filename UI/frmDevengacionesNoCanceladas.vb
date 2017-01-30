@@ -39,16 +39,17 @@
         dgDevengaciones.Columns(2).HeaderText = "Total"
         dgDevengaciones.Columns(3).HeaderText = "ID Devengación"
         dgDevengaciones.Columns(4).HeaderText = "Fecha"
-        dgDevengaciones.Columns(5).HeaderText = "Alumno"
-        dgDevengaciones.Columns(5).Width = 200
-        dgDevengaciones.Columns(6).HeaderText = "DNI"
-        dgDevengaciones.Columns(7).HeaderText = "Beca"
-        dgDevengaciones.Columns(8).HeaderText = "Sala"
+        dgDevengaciones.Columns(5).HeaderText = "Mes"
+        dgDevengaciones.Columns(6).HeaderText = "Alumno"
+        dgDevengaciones.Columns(6).Width = 200
+        dgDevengaciones.Columns(7).HeaderText = "DNI"
+        dgDevengaciones.Columns(8).HeaderText = "Beca"
+        dgDevengaciones.Columns(9).HeaderText = "Sala"
         'dgDevengaciones.Columns(6).HeaderText = "Total"
         'dgDevengaciones.Columns(5).HeaderText = "Concepto"
-        dgDevengaciones.Columns(9).HeaderText = "Vencimiento 1"
-        dgDevengaciones.Columns(10).HeaderText = "Vencimiento 2"
-        dgDevengaciones.Columns(11).HeaderText = "Vencimiento 3"
+        dgDevengaciones.Columns(10).HeaderText = "Vencimiento 1"
+        dgDevengaciones.Columns(11).HeaderText = "Vencimiento 2"
+        dgDevengaciones.Columns(12).HeaderText = "Vencimiento 3"
 
         'configuracion de los parametros del reporte, si se estan viendo todas las devengaciones no canceladas 
         'esta linea no tiene funcionalidad
@@ -61,12 +62,14 @@
         Dim nroDev As String
         Dim fecha As String
         Dim DNI As Integer
+        Dim mes As String
 
         idDev = Convert.ToInt32(dgDevengaciones.Rows(e.RowIndex).Cells(3).Value)
         fecha = dgDevengaciones.Rows(e.RowIndex).Cells(4).Value.ToString
-        DNI = Convert.ToInt32(dgDevengaciones.Rows(e.RowIndex).Cells(6).Value)
+        DNI = Convert.ToInt32(dgDevengaciones.Rows(e.RowIndex).Cells(7).Value)
         nroDev = idDev.ToString
         nroDev = nroDev.PadLeft(8, "0")
+        mes = Convert.ToString(dgDevengaciones.Rows(e.RowIndex).Cells(5).Value)
         'si se estan viendo todas las devengaciones o en un rango de fechas, entonces alu está vacío
         'If todas Or fecha Then
         repoAlumno.Traer_X_DNI(DNI, alu, bd)
@@ -82,6 +85,7 @@
                 visRepDevengacion.beca = alu.descuento.ToString
                 visRepDevengacion.pagoElectronico = "0000" + alu.legajo.ToString
                 visRepDevengacion.bd = bd
+                visRepDevengacion.mes = mes
                 visRepDevengacion.MdiParent = frmMain
                 visRepDevengacion.Show()
             End If
@@ -95,6 +99,7 @@
                 visRepDevengacion2v.beca = alu.descuento.ToString
                 visRepDevengacion2v.pagoElectronico = "0000" + alu.legajo.ToString
                 visRepDevengacion2v.bd = bd
+                visRepDevengacion2v.mes = mes
                 visRepDevengacion2v.MdiParent = frmMain
                 visRepDevengacion2v.Show()
             End If
@@ -108,6 +113,7 @@
                 visRepDevengacion1v.beca = alu.descuento.ToString
                 visRepDevengacion1v.pagoElectronico = "0000" + alu.legajo.ToString
                 visRepDevengacion1v.bd = bd
+                visRepDevengacion1v.mes = mes
                 visRepDevengacion1v.MdiParent = frmMain
                 visRepDevengacion1v.Show()
             End If
@@ -121,6 +127,7 @@
                 visRepDevengacionsv.beca = alu.descuento.ToString
                 visRepDevengacionsv.pagoElectronico = "0000" + alu.legajo.ToString
                 visRepDevengacionsv.bd = bd
+                visRepDevengacionsv.mes = mes
                 visRepDevengacionsv.MdiParent = frmMain
                 visRepDevengacionsv.Show()
             End If
@@ -133,6 +140,7 @@
                 visRepDevengacionvia2.nroDev = nroDev
                 visRepDevengacionvia2.beca = alu.descuento.ToString
                 visRepDevengacionvia2.bd = bd
+                visRepDevengacionvia2.mes = mes
                 visRepDevengacionvia2.MdiParent = frmMain
                 visRepDevengacionvia2.Show()
             End If
@@ -144,6 +152,7 @@
                 visRepDevengacionvia22v.nroDev = nroDev
                 visRepDevengacionvia22v.beca = alu.descuento.ToString
                 visRepDevengacionvia22v.bd = bd
+                visRepDevengacionvia22v.mes = mes
                 visRepDevengacionvia22v.MdiParent = frmMain
                 visRepDevengacionvia22v.Show()
             End If
@@ -155,6 +164,7 @@
                 visRepDevengacionvia21v.nroDev = nroDev
                 visRepDevengacionvia21v.beca = alu.descuento.ToString
                 visRepDevengacionvia21v.bd = bd
+                visRepDevengacionvia21v.mes = mes
                 visRepDevengacionvia21v.MdiParent = frmMain
                 visRepDevengacionvia21v.Show()
             End If
@@ -166,11 +176,10 @@
                 visRepDevengacionvia2sv.nroDev = nroDev
                 visRepDevengacionvia2sv.beca = alu.descuento.ToString
                 visRepDevengacionvia2sv.bd = bd
+                visRepDevengacionvia2sv.mes = mes
                 visRepDevengacionvia2sv.MdiParent = frmMain
                 visRepDevengacionvia2sv.Show()
             End If
-
         End If
-
     End Sub
 End Class

@@ -9,6 +9,7 @@
     Public xsala As Boolean 'si es una devengacion por sala, no se previsualiza
     Public bd As Boolean
     Public cantVencimientos As Integer
+    Public mes As String
 
     Private Sub devengacion_Load(sender As Object, e As EventArgs) Handles devengacion.Load
         Dim conexion As New cBaseDatos
@@ -34,6 +35,7 @@
             objrep.SetParameterValue(3, nroDev)
             objrep.SetParameterValue(4, beca)
             objrep.SetParameterValue(5, fecha)
+            objrep.SetParameterValue(6, mes)
 
             If xsala Then
                 objrep.PrintToPrinter(1, False, 0, 0)

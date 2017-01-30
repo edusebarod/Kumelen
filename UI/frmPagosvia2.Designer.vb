@@ -275,6 +275,7 @@ Partial Class frmPagosvia2
         'cbxCtaEgreso
         '
         Me.cbxCtaEgreso.FormattingEnabled = True
+        Me.cbxCtaEgreso.Items.AddRange(New Object() {"Caja Efectivo", "Caja Efectivo San Carlos"})
         Me.cbxCtaEgreso.Location = New System.Drawing.Point(179, 52)
         Me.cbxCtaEgreso.Name = "cbxCtaEgreso"
         Me.cbxCtaEgreso.Size = New System.Drawing.Size(414, 21)

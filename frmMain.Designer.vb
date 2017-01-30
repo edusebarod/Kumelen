@@ -102,23 +102,36 @@ Partial Class frmMain
         Me.GastosXProveedorVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GastosVía1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GastosVía2ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.INgresosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IngresosVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeudasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EstadoDeCuentaVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IngresosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem12 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadoDeCuentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeudaPorAlumnoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeudaPorSalaGradoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagoMisCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagoMisCuentas2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FEAFIPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanDeCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanDeCuenctasVía1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanDeCuentasVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DevengacionesAlumnosVía1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DevengacionesAlumnosVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PaseEntreCuentasVía1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PaseEntreCuentasVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MovimientosVía1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MovimientosVía2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimientosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaseEntreCuentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía1ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Vía2ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActasCompromisoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -133,6 +146,7 @@ Partial Class frmMain
         Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ArrangeIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LegajosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -593,7 +607,7 @@ Partial Class frmMain
         '
         'StockToolStripMenuItem
         '
-        Me.StockToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GastosToolStripMenuItem1, Me.INgresosToolStripMenuItem, Me.IngresosVía2ToolStripMenuItem, Me.DeudasToolStripMenuItem, Me.EstadoDeCuentaVía2ToolStripMenuItem, Me.DeudaPorAlumnoToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.PagoMisCuentasToolStripMenuItem, Me.PagoMisCuentas2ToolStripMenuItem, Me.FEAFIPToolStripMenuItem, Me.PlanDeCuenctasVía1ToolStripMenuItem, Me.PlanDeCuentasVía2ToolStripMenuItem, Me.DevengacionesAlumnosVía1ToolStripMenuItem, Me.DevengacionesAlumnosVía2ToolStripMenuItem, Me.PaseEntreCuentasVía1ToolStripMenuItem, Me.PaseEntreCuentasVía2ToolStripMenuItem, Me.MovimientosVía1ToolStripMenuItem, Me.MovimientosVía2ToolStripMenuItem})
+        Me.StockToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GastosToolStripMenuItem1, Me.IngresosToolStripMenuItem1, Me.EstadoDeCuentaToolStripMenuItem, Me.DeudaPorAlumnoToolStripMenuItem, Me.DeudaPorSalaGradoToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.PagoMisCuentasToolStripMenuItem, Me.PagoMisCuentas2ToolStripMenuItem, Me.FEAFIPToolStripMenuItem, Me.PlanDeCuentasToolStripMenuItem, Me.PlanDeCuenctasVía1ToolStripMenuItem, Me.PlanDeCuentasVía2ToolStripMenuItem, Me.DevengacionesAlumnosVía1ToolStripMenuItem, Me.DevengacionesAlumnosVía2ToolStripMenuItem, Me.MovimientosToolStripMenuItem1, Me.ToolStripMenuItem3, Me.PaseEntreCuentasToolStripMenuItem})
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
         Me.StockToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.StockToolStripMenuItem.Text = "Contables"
@@ -629,35 +643,68 @@ Partial Class frmMain
         Me.GastosVía2ToolStripMenuItem1.Size = New System.Drawing.Size(202, 22)
         Me.GastosVía2ToolStripMenuItem1.Text = "Gastos Vía 2"
         '
-        'INgresosToolStripMenuItem
+        'IngresosToolStripMenuItem1
         '
-        Me.INgresosToolStripMenuItem.Name = "INgresosToolStripMenuItem"
-        Me.INgresosToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.INgresosToolStripMenuItem.Text = "Ingresos Vía 1"
+        Me.IngresosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem12, Me.Vía2ToolStripMenuItem12})
+        Me.IngresosToolStripMenuItem1.Name = "IngresosToolStripMenuItem1"
+        Me.IngresosToolStripMenuItem1.Size = New System.Drawing.Size(233, 22)
+        Me.IngresosToolStripMenuItem1.Text = "Ingresos"
         '
-        'IngresosVía2ToolStripMenuItem
+        'Vía1ToolStripMenuItem12
         '
-        Me.IngresosVía2ToolStripMenuItem.Name = "IngresosVía2ToolStripMenuItem"
-        Me.IngresosVía2ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.IngresosVía2ToolStripMenuItem.Text = "Ingresos Vía 2"
+        Me.Vía1ToolStripMenuItem12.Name = "Vía1ToolStripMenuItem12"
+        Me.Vía1ToolStripMenuItem12.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem12.Text = "Vía 1"
         '
-        'DeudasToolStripMenuItem
+        'Vía2ToolStripMenuItem12
         '
-        Me.DeudasToolStripMenuItem.Name = "DeudasToolStripMenuItem"
-        Me.DeudasToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.DeudasToolStripMenuItem.Text = "Estado de Cuenta Vía 1"
+        Me.Vía2ToolStripMenuItem12.Name = "Vía2ToolStripMenuItem12"
+        Me.Vía2ToolStripMenuItem12.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem12.Text = "Vía 2"
         '
-        'EstadoDeCuentaVía2ToolStripMenuItem
+        'EstadoDeCuentaToolStripMenuItem
         '
-        Me.EstadoDeCuentaVía2ToolStripMenuItem.Name = "EstadoDeCuentaVía2ToolStripMenuItem"
-        Me.EstadoDeCuentaVía2ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.EstadoDeCuentaVía2ToolStripMenuItem.Text = "Estado de Cuenta Vía 2"
+        Me.EstadoDeCuentaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem11, Me.Vía2ToolStripMenuItem11})
+        Me.EstadoDeCuentaToolStripMenuItem.Name = "EstadoDeCuentaToolStripMenuItem"
+        Me.EstadoDeCuentaToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.EstadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta"
+        '
+        'Vía1ToolStripMenuItem11
+        '
+        Me.Vía1ToolStripMenuItem11.Name = "Vía1ToolStripMenuItem11"
+        Me.Vía1ToolStripMenuItem11.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem11.Text = "Vía 1"
+        '
+        'Vía2ToolStripMenuItem11
+        '
+        Me.Vía2ToolStripMenuItem11.Name = "Vía2ToolStripMenuItem11"
+        Me.Vía2ToolStripMenuItem11.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem11.Text = "Vía 2"
         '
         'DeudaPorAlumnoToolStripMenuItem
         '
         Me.DeudaPorAlumnoToolStripMenuItem.Name = "DeudaPorAlumnoToolStripMenuItem"
         Me.DeudaPorAlumnoToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.DeudaPorAlumnoToolStripMenuItem.Text = "Deuda por Alumno"
+        '
+        'DeudaPorSalaGradoToolStripMenuItem
+        '
+        Me.DeudaPorSalaGradoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem7, Me.Vía2ToolStripMenuItem7})
+        Me.DeudaPorSalaGradoToolStripMenuItem.Name = "DeudaPorSalaGradoToolStripMenuItem"
+        Me.DeudaPorSalaGradoToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.DeudaPorSalaGradoToolStripMenuItem.Text = "Deuda por Sala/Grado"
+        '
+        'Vía1ToolStripMenuItem7
+        '
+        Me.Vía1ToolStripMenuItem7.Name = "Vía1ToolStripMenuItem7"
+        Me.Vía1ToolStripMenuItem7.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem7.Text = "Vía 1"
+        '
+        'Vía2ToolStripMenuItem7
+        '
+        Me.Vía2ToolStripMenuItem7.Name = "Vía2ToolStripMenuItem7"
+        Me.Vía2ToolStripMenuItem7.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem7.Text = "Vía 2"
         '
         'ProductosToolStripMenuItem
         '
@@ -683,6 +730,25 @@ Partial Class frmMain
         Me.FEAFIPToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.FEAFIPToolStripMenuItem.Text = "FE AFIP"
         '
+        'PlanDeCuentasToolStripMenuItem
+        '
+        Me.PlanDeCuentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem13, Me.Vía2ToolStripMenuItem13})
+        Me.PlanDeCuentasToolStripMenuItem.Name = "PlanDeCuentasToolStripMenuItem"
+        Me.PlanDeCuentasToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.PlanDeCuentasToolStripMenuItem.Text = "Plan de Cuentas"
+        '
+        'Vía1ToolStripMenuItem13
+        '
+        Me.Vía1ToolStripMenuItem13.Name = "Vía1ToolStripMenuItem13"
+        Me.Vía1ToolStripMenuItem13.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem13.Text = "Vía 1"
+        '
+        'Vía2ToolStripMenuItem13
+        '
+        Me.Vía2ToolStripMenuItem13.Name = "Vía2ToolStripMenuItem13"
+        Me.Vía2ToolStripMenuItem13.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem13.Text = "Vía 2"
+        '
         'PlanDeCuenctasVía1ToolStripMenuItem
         '
         Me.PlanDeCuenctasVía1ToolStripMenuItem.Name = "PlanDeCuenctasVía1ToolStripMenuItem"
@@ -707,33 +773,66 @@ Partial Class frmMain
         Me.DevengacionesAlumnosVía2ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
         Me.DevengacionesAlumnosVía2ToolStripMenuItem.Text = "Devengaciones Alumnos Vía 2"
         '
-        'PaseEntreCuentasVía1ToolStripMenuItem
+        'MovimientosToolStripMenuItem1
         '
-        Me.PaseEntreCuentasVía1ToolStripMenuItem.Name = "PaseEntreCuentasVía1ToolStripMenuItem"
-        Me.PaseEntreCuentasVía1ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.PaseEntreCuentasVía1ToolStripMenuItem.Text = "Pase entre cuentas Vía 1"
+        Me.MovimientosToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem9, Me.Vía2ToolStripMenuItem9})
+        Me.MovimientosToolStripMenuItem1.Name = "MovimientosToolStripMenuItem1"
+        Me.MovimientosToolStripMenuItem1.Size = New System.Drawing.Size(233, 22)
+        Me.MovimientosToolStripMenuItem1.Text = "Movimientos"
         '
-        'PaseEntreCuentasVía2ToolStripMenuItem
+        'Vía1ToolStripMenuItem9
         '
-        Me.PaseEntreCuentasVía2ToolStripMenuItem.Name = "PaseEntreCuentasVía2ToolStripMenuItem"
-        Me.PaseEntreCuentasVía2ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.PaseEntreCuentasVía2ToolStripMenuItem.Text = "Pase entre cuentas Vía 2"
+        Me.Vía1ToolStripMenuItem9.Name = "Vía1ToolStripMenuItem9"
+        Me.Vía1ToolStripMenuItem9.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem9.Text = "Vía 1"
         '
-        'MovimientosVía1ToolStripMenuItem
+        'Vía2ToolStripMenuItem9
         '
-        Me.MovimientosVía1ToolStripMenuItem.Name = "MovimientosVía1ToolStripMenuItem"
-        Me.MovimientosVía1ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.MovimientosVía1ToolStripMenuItem.Text = "Movimientos Vía 1"
+        Me.Vía2ToolStripMenuItem9.Name = "Vía2ToolStripMenuItem9"
+        Me.Vía2ToolStripMenuItem9.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem9.Text = "Vía 2"
         '
-        'MovimientosVía2ToolStripMenuItem
+        'ToolStripMenuItem3
         '
-        Me.MovimientosVía2ToolStripMenuItem.Name = "MovimientosVía2ToolStripMenuItem"
-        Me.MovimientosVía2ToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
-        Me.MovimientosVía2ToolStripMenuItem.Text = "Movimientos Vía 2"
+        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem8, Me.Vía2ToolStripMenuItem8})
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(233, 22)
+        Me.ToolStripMenuItem3.Text = "Deuda General"
+        '
+        'Vía1ToolStripMenuItem8
+        '
+        Me.Vía1ToolStripMenuItem8.Name = "Vía1ToolStripMenuItem8"
+        Me.Vía1ToolStripMenuItem8.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem8.Text = "Vía 1"
+        '
+        'Vía2ToolStripMenuItem8
+        '
+        Me.Vía2ToolStripMenuItem8.Name = "Vía2ToolStripMenuItem8"
+        Me.Vía2ToolStripMenuItem8.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem8.Text = "Vía 2"
+        '
+        'PaseEntreCuentasToolStripMenuItem
+        '
+        Me.PaseEntreCuentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Vía1ToolStripMenuItem10, Me.Vía2ToolStripMenuItem10})
+        Me.PaseEntreCuentasToolStripMenuItem.Name = "PaseEntreCuentasToolStripMenuItem"
+        Me.PaseEntreCuentasToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.PaseEntreCuentasToolStripMenuItem.Text = "Pase entre cuentas"
+        '
+        'Vía1ToolStripMenuItem10
+        '
+        Me.Vía1ToolStripMenuItem10.Name = "Vía1ToolStripMenuItem10"
+        Me.Vía1ToolStripMenuItem10.Size = New System.Drawing.Size(99, 22)
+        Me.Vía1ToolStripMenuItem10.Text = "Vía 1"
+        '
+        'Vía2ToolStripMenuItem10
+        '
+        Me.Vía2ToolStripMenuItem10.Name = "Vía2ToolStripMenuItem10"
+        Me.Vía2ToolStripMenuItem10.Size = New System.Drawing.Size(99, 22)
+        Me.Vía2ToolStripMenuItem10.Text = "Vía 2"
         '
         'GeneralToolStripMenuItem
         '
-        Me.GeneralToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActasCompromisoToolStripMenuItem})
+        Me.GeneralToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActasCompromisoToolStripMenuItem, Me.LegajosToolStripMenuItem})
         Me.GeneralToolStripMenuItem.Name = "GeneralToolStripMenuItem"
         Me.GeneralToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.GeneralToolStripMenuItem.Text = "General"
@@ -754,13 +853,13 @@ Partial Class frmMain
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.UsuariosToolStripMenuItem.Text = "&Usuarios"
         '
         'VencimientosToolStripMenuItem
         '
         Me.VencimientosToolStripMenuItem.Name = "VencimientosToolStripMenuItem"
-        Me.VencimientosToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.VencimientosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.VencimientosToolStripMenuItem.Text = "Vencimientos"
         '
         'SalirToolStripMenuItem
@@ -820,6 +919,12 @@ Partial Class frmMain
         Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.ArrangeIconsToolStripMenuItem.Text = "&Arrange Icons"
         '
+        'LegajosToolStripMenuItem
+        '
+        Me.LegajosToolStripMenuItem.Name = "LegajosToolStripMenuItem"
+        Me.LegajosToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.LegajosToolStripMenuItem.Text = "Legajos"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -871,7 +976,6 @@ Partial Class frmMain
     Friend WithEvents AlumnosPorGradoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosPorNivelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents INgresosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VencimientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FacturarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VerFacturasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
@@ -883,7 +987,6 @@ Partial Class frmMain
     Friend WithEvents Vía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía1ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía2ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DeudasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía1ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía2ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VerDevengacionesVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -911,14 +1014,12 @@ Partial Class frmMain
     Friend WithEvents ManualDeUsoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AnularFacturaVía1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AnularFacturaVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EstadoDeCuentaVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosEscuelaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosPorGradoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AlumnosPorGadoConBecaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MovimientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía1ToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Vía2ToolStripMenuItem6 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents IngresosVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ArqueoDeCajaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KSCVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ZooGlobalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -947,9 +1048,27 @@ Partial Class frmMain
     Friend WithEvents VencimientosToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VencimientosToolStripMenuItem5 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SinVencimientosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PaseEntreCuentasVía1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MovimientosVía1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MovimientosVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PaseEntreCuentasVía2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DeudaPorSalaGradoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MovimientosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem9 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem9 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PaseEntreCuentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem10 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem10 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EstadoDeCuentaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem11 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem11 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents IngresosToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem12 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem12 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlanDeCuentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía1ToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Vía2ToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LegajosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

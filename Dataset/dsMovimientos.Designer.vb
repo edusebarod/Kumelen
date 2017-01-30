@@ -303,6 +303,8 @@ Partial Public Class dsMovimientos
 
         Private columnnroFactura As Global.System.Data.DataColumn
 
+        Private columnmedioPago As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -419,6 +421,14 @@ Partial Public Class dsMovimientos
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property medioPagoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnmedioPago
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -455,9 +465,9 @@ Partial Public Class dsMovimientos
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddDetallesRow(ByVal fecha As String, ByVal tipo As String, ByVal concepto As String, ByVal sala As String, ByVal alumno As String, ByVal ingreso As String, ByVal egreso As String, ByVal cuenta As String, ByVal observaciones As String, ByVal nroFactura As String) As DetallesRow
+        Public Overloads Function AddDetallesRow(ByVal fecha As String, ByVal tipo As String, ByVal concepto As String, ByVal sala As String, ByVal alumno As String, ByVal ingreso As String, ByVal egreso As String, ByVal cuenta As String, ByVal observaciones As String, ByVal nroFactura As String, ByVal medioPago As String) As DetallesRow
             Dim rowDetallesRow As DetallesRow = CType(Me.NewRow, DetallesRow)
-            Dim columnValuesArray() As Object = New Object() {fecha, tipo, concepto, sala, alumno, ingreso, egreso, cuenta, observaciones, nroFactura}
+            Dim columnValuesArray() As Object = New Object() {fecha, tipo, concepto, sala, alumno, ingreso, egreso, cuenta, observaciones, nroFactura, medioPago}
             rowDetallesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDetallesRow)
             Return rowDetallesRow
@@ -490,6 +500,7 @@ Partial Public Class dsMovimientos
             Me.columncuenta = MyBase.Columns("cuenta")
             Me.columnobservaciones = MyBase.Columns("observaciones")
             Me.columnnroFactura = MyBase.Columns("nroFactura")
+            Me.columnmedioPago = MyBase.Columns("medioPago")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -515,6 +526,8 @@ Partial Public Class dsMovimientos
             MyBase.Columns.Add(Me.columnobservaciones)
             Me.columnnroFactura = New Global.System.Data.DataColumn("nroFactura", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnroFactura)
+            Me.columnmedioPago = New Global.System.Data.DataColumn("medioPago", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnmedioPago)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -811,6 +824,21 @@ Partial Public Class dsMovimientos
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property medioPago() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableDetalles.medioPagoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'medioPago' in table 'Detalles' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableDetalles.medioPagoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsfechaNull() As Boolean
             Return Me.IsNull(Me.tableDetalles.fechaColumn)
         End Function
@@ -927,6 +955,18 @@ Partial Public Class dsMovimientos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetnroFacturaNull()
             Me(Me.tableDetalles.nroFacturaColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsmedioPagoNull() As Boolean
+            Return Me.IsNull(Me.tableDetalles.medioPagoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetmedioPagoNull()
+            Me(Me.tableDetalles.medioPagoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

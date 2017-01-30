@@ -24,7 +24,9 @@ Partial Class frmFacturacionvia2
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFacturacionvia2))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbxMedioPago = New System.Windows.Forms.ComboBox()
         Me.cbxPtoVta = New System.Windows.Forms.ComboBox()
+        Me.lblMedioPago = New System.Windows.Forms.Label()
         Me.lblPtoVta = New System.Windows.Forms.Label()
         Me.ChbxIntereses = New System.Windows.Forms.CheckBox()
         Me.btnFacturar = New System.Windows.Forms.Button()
@@ -64,7 +66,9 @@ Partial Class frmFacturacionvia2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbxMedioPago)
         Me.GroupBox1.Controls.Add(Me.cbxPtoVta)
+        Me.GroupBox1.Controls.Add(Me.lblMedioPago)
         Me.GroupBox1.Controls.Add(Me.lblPtoVta)
         Me.GroupBox1.Controls.Add(Me.ChbxIntereses)
         Me.GroupBox1.Controls.Add(Me.btnFacturar)
@@ -84,6 +88,16 @@ Partial Class frmFacturacionvia2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalles de Factura"
         '
+        'cbxMedioPago
+        '
+        Me.cbxMedioPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbxMedioPago.FormattingEnabled = True
+        Me.cbxMedioPago.Items.AddRange(New Object() {"Efectivo"})
+        Me.cbxMedioPago.Location = New System.Drawing.Point(124, 263)
+        Me.cbxMedioPago.Name = "cbxMedioPago"
+        Me.cbxMedioPago.Size = New System.Drawing.Size(146, 21)
+        Me.cbxMedioPago.TabIndex = 74
+        '
         'cbxPtoVta
         '
         Me.cbxPtoVta.FormattingEnabled = True
@@ -92,6 +106,16 @@ Partial Class frmFacturacionvia2
         Me.cbxPtoVta.Name = "cbxPtoVta"
         Me.cbxPtoVta.Size = New System.Drawing.Size(146, 21)
         Me.cbxPtoVta.TabIndex = 71
+        '
+        'lblMedioPago
+        '
+        Me.lblMedioPago.AutoSize = True
+        Me.lblMedioPago.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMedioPago.Location = New System.Drawing.Point(15, 263)
+        Me.lblMedioPago.Name = "lblMedioPago"
+        Me.lblMedioPago.Size = New System.Drawing.Size(104, 16)
+        Me.lblMedioPago.TabIndex = 73
+        Me.lblMedioPago.Text = "Medio de Pago"
         '
         'lblPtoVta
         '
@@ -224,6 +248,7 @@ Partial Class frmFacturacionvia2
         'cbxCuenta
         '
         Me.cbxCuenta.FormattingEnabled = True
+        Me.cbxCuenta.Items.AddRange(New Object() {"Caja Efectivo", "Caja Efectivo San Carlos"})
         Me.cbxCuenta.Location = New System.Drawing.Point(95, 18)
         Me.cbxCuenta.Name = "cbxCuenta"
         Me.cbxCuenta.Size = New System.Drawing.Size(255, 21)
@@ -444,4 +469,6 @@ Partial Class frmFacturacionvia2
     Friend WithEvents ChbxIntereses As System.Windows.Forms.CheckBox
     Friend WithEvents cbxPtoVta As System.Windows.Forms.ComboBox
     Friend WithEvents lblPtoVta As System.Windows.Forms.Label
+    Friend WithEvents cbxMedioPago As System.Windows.Forms.ComboBox
+    Friend WithEvents lblMedioPago As System.Windows.Forms.Label
 End Class

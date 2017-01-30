@@ -4,6 +4,7 @@
     Public sala As String
     Public objrep As New rptFacturacionvia2
     Public bd As New Boolean
+    Public print As Boolean
 
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs) Handles CrystalReportViewer1.Load
         Dim conexion As New cBaseDatos
@@ -38,6 +39,9 @@
 
             objrep.SetParameterValue(0, alumno)
             objrep.SetParameterValue(1, fecha)
+            If print Then
+                objrep.PrintToPrinter(1, False, 1, 2)
+            End If
 
             CrystalReportViewer1.ReportSource = objrep
             CrystalReportViewer1.Refresh()

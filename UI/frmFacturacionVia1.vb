@@ -104,10 +104,10 @@
             ColorearValidacion(True, lblNombre)
             B = False
         End If
-        If txtEncargado.Text = "" Then
-            ColorearValidacion(True, lblEncargado)
-            B = False
-        End If
+        'If txtEncargado.Text = "" Then
+        ' ColorearValidacion(True, lblEncargado)
+        ' B = False
+        'End If
         If txtSala.Text = "" Then
             ColorearValidacion(True, lblSala)
             B = False
@@ -120,7 +120,10 @@
             ColorearValidacion(True, lblPtoVta)
             B = False
         End If
-
+        If cbxMedioPago.Text = "" Then
+            ColorearValidacion(True, lblMedioPago)
+            B = False
+        End If
         Return B
     End Function
 
@@ -233,7 +236,7 @@
             If dgDetalle.RowCount > 0 Then
                 EnableCmd(False, btnFacturar)
                 Dim factura As Integer
-                factura = repoFact.Facturar(Alu.id, txtEncargado.Text, Convert.ToDouble(txtTotal.Text), cbxPtoVta.Text, txtObservaciones.Text, txtSala.Text, dgDetalle)
+                factura = repoFact.Facturar(Alu.id, txtEncargado.Text, Convert.ToDouble(txtTotal.Text), cbxPtoVta.Text, txtObservaciones.Text, txtSala.Text, dgDetalle, cbxMedioPago.SelectedText)
 
                 MsgBox(Cts.msgGraboOK, MsgBoxStyle.OkOnly + MsgBoxStyle.DefaultButton1 + MsgBoxStyle.Information, Cts.msgTitulo)
 
@@ -249,6 +252,7 @@
                 visRepDuplicadovía1.alumno = String.Format("{0}, {1}", txtApellido.Text, txtNombre.Text)
                 'visRepDuplicadovía1.sala = repo.Sala(Alu.curso)
                 visRepDuplicadovía1.bd = True
+                visRepDuplicadovía1.print = True
 
                 limpiargrilla()
                 limpiarControles()
@@ -270,6 +274,32 @@
         If cbxCuenta.SelectedItem(1).ToString = "Pago Electrónico" Then
             txtEncargado.Text = "Pago electrónico"
         End If
+
+        If cbxCuenta.SelectedItem(1).ToString = "Caja Efectivo" Then
+            cbxMedioPago.Items.Clear()
+            cbxMedioPago.Items.Add("Efectivo")
+        End If
+
+        If cbxCuenta.SelectedItem(1).ToString = "Caja Efectivo San Carlos" Then
+            cbxMedioPago.Items.Clear()
+            cbxMedioPago.Items.Add("Efectivo")
+        End If
+
+        If cbxCuenta.SelectedItem(1).ToString = "Banco Macro Cuenta Corriente" Then
+            cbxMedioPago.Items.Clear()
+            cbxMedioPago.Items.Add("Pago Mis Cuentas")
+            cbxMedioPago.Items.Add("Transferencia Bancaria")
+            cbxMedioPago.Items.Add("Tarjeta de Crédito")
+            cbxMedioPago.Items.Add("Tarjeta de Débito")
+        End If
+
+        If cbxCuenta.SelectedItem(1).ToString = "Banco Macro Cuenta Especial" Then
+            cbxMedioPago.Items.Clear()
+            cbxMedioPago.Items.Add("Pago Mis Cuentas")
+            cbxMedioPago.Items.Add("Transferencia Bancaria")
+            cbxMedioPago.Items.Add("Tarjeta de Crédito")
+            cbxMedioPago.Items.Add("Tarjeta de Débito")
+        End If
     End Sub
 
     Private Sub dgDetalle_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgDetalle.CellValueChanged
@@ -285,5 +315,4 @@
     Private Sub limpiargrilla()
         Me.dgDetalle.Rows.Clear()
     End Sub
-
 End Class

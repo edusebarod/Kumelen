@@ -247,7 +247,7 @@ Public Class RepoFacturacion
     'alu: id del alumno al que se le devenga
     'Total: monto total de la devengación
     'observaciones: observaciones de la devengación
-    Public Function Facturar(ByVal alu As Integer, ByVal encargado As String, ByVal total As Double, ByVal ptovta As String, ByVal observaciones As String, ByVal sala As String, ByVal detalle As DataGridView, Optional ByVal bd As Boolean = True) As Integer
+    Public Function Facturar(ByVal alu As Integer, ByVal encargado As String, ByVal total As Double, ByVal ptovta As String, ByVal observaciones As String, ByVal sala As String, ByVal detalle As DataGridView, Optional ByVal medioPago As String = "-", Optional ByVal bd As Boolean = True) As Integer
         Dim con As New cBaseDatos
         Dim DS As DataSet = New DataSet()
         Dim DS2 As DataSet = New DataSet()
@@ -332,8 +332,8 @@ Public Class RepoFacturacion
         DS2.Dispose()
 
         'se factura
-        SQL = String.Format("INSERT INTO `movimientos` (`mov_id`, `per_id`,`mov_encargado`, `mov_tipo`, `mov_fecha`, `mov_total`, `mov_pto_venta`, `mov_nro_factura`, `mov_obs`, `mov_concepto`, `mov_cuentaDebe`, `mov_cuentaHaber`, `mov_sala`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}')",
-                                         alu, encargado, Cts.movCobro, DateTime.Now().ToString("yyyy/MM/dd").ToString, total, ptovta, nrofact, observaciones, "", "", "", sala)
+        SQL = String.Format("INSERT INTO `movimientos` (`mov_id`, `per_id`,`mov_encargado`, `mov_tipo`, `mov_fecha`, `mov_total`, `mov_pto_venta`, `mov_nro_factura`, `mov_obs`, `mov_concepto`, `mov_cuentaDebe`, `mov_cuentaHaber`, `mov_sala`, `mov_medioPago`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')",
+                                         alu, encargado, Cts.movCobro, DateTime.Now().ToString("yyyy/MM/dd").ToString, total, ptovta, nrofact, observaciones, "", "", "", sala, medioPago)
         Try
             result = con.EjecutarComando(SQL)
         Catch ex As Exception
@@ -455,7 +455,7 @@ Public Class RepoFacturacion
     'alu: id del alumno al que se le devenga
     'Total: monto total de la devengación
     'observaciones: observaciones de la devengación
-    Public Function FacturarAlu(ByVal alu As Integer, ByVal dev_id As Integer, ByVal encargado As String, ByVal cuenta As String, ByVal concepto As String, ByVal ptovta As String, ByVal total As Decimal, ByVal observaciones As String, Optional ByVal bd As Boolean = True) As Integer
+    Public Function FacturarAlu(ByVal alu As Integer, ByVal dev_id As Integer, ByVal encargado As String, ByVal cuenta As String, ByVal concepto As String, ByVal ptovta As String, ByVal total As Decimal, ByVal observaciones As String, ByVal sala As String, Optional ByVal medioPago As String = "-", Optional ByVal bd As Boolean = True) As Integer
         Dim con As New cBaseDatos
         Dim DS As DataSet = New DataSet()
         Dim DS2 As DataSet = New DataSet()
@@ -530,8 +530,8 @@ Public Class RepoFacturacion
         DS2.Dispose()
 
         'se factura
-        SQL = String.Format("INSERT INTO `movimientos` (`mov_id`, `per_id`,`mov_encargado`, `mov_tipo`, `mov_fecha`, `mov_total`, `mov_pto_venta`, `mov_nro_factura`, `mov_obs`, `mov_concepto`, `mov_cuentaDebe`, `mov_cuentaHaber`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}')",
-                                         alu, encargado, Cts.movCobro, DateTime.Now().ToString("yyyy/MM/dd").ToString, total, ptovta, nrofact, observaciones, "", "", "")
+        SQL = String.Format("INSERT INTO `movimientos` (`mov_id`, `per_id`,`mov_encargado`, `mov_tipo`, `mov_fecha`, `mov_total`, `mov_pto_venta`, `mov_nro_factura`, `mov_obs`, `mov_concepto`, `mov_cuentaDebe`, `mov_cuentaHaber`, `mov_sala`, `mov_medioPago`) VALUES (NULL, '{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}')",
+                                         alu, encargado, Cts.movCobro, DateTime.Now().ToString("yyyy/MM/dd").ToString, total, ptovta, nrofact, observaciones, "", "", "", sala, medioPago)
         Try
             result = con.EjecutarComando(SQL)
         Catch ex As Exception
@@ -648,11 +648,10 @@ Public Class RepoFacturacion
             MessageBox.Show(ex.Message)
         End Try
 
-        'se descancelan las devengaciones asociadas y se anulan los detalles del movimiento
+        'se descancelan las devengaciones asociadas y se deanulan los detalles de la devengación
         Try
             For Each row As DataRow In DS2.Tables(0).Rows
-                SQL = String.Format("UPDATE  `devengacionesdetalles` SET  `dde_cancelada` =  '0' WHERE  `devengacionesdetalles`.`dev_id` = {0}; " +
-                                    "UPDATE  `devengacionesdetalles` SET  `dde_anulada` =  '1' WHERE  `devengacionesdetalles`.`dev_id` = {0} AND serv_nombre LIKE 'Intereses devengados'; ", row(0))
+                SQL = String.Format("UPDATE  `devengacionesdetalles` SET  `dde_cancelada` =  '0' WHERE  `devengacionesdetalles`.`dev_id` = {0} AND serv_nombre NOT LIKE 'Intereses devengados'", row(0))
                 conexion.EjecutarComando(SQL)
             Next
 

@@ -219,7 +219,7 @@ Public Class frmMain
         frmBusquedaGastos.Show()
     End Sub
 
-    Private Sub INgresosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INgresosToolStripMenuItem.Click
+    Private Sub INgresosToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmBusquedaIngresos.Close()
         frmBusquedaIngresos.db = True
         frmBusquedaIngresos.sucursal = "ZOO"
@@ -227,7 +227,7 @@ Public Class frmMain
         frmBusquedaIngresos.Show()
     End Sub
 
-    Private Sub IngresosVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IngresosVía2ToolStripMenuItem.Click
+    Private Sub IngresosVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs)
         frmBusquedaIngresos.Close()
         frmBusquedaIngresos.db = False
         frmBusquedaIngresos.sucursal = "ZOO"
@@ -235,27 +235,25 @@ Public Class frmMain
         frmBusquedaIngresos.Show()
     End Sub
 
-    Private Sub DeudasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeudasToolStripMenuItem.Click
-        frmBusquedaEstadoCuenta.Close()
-        frmBusquedaEstadoCuenta.sucursal = "ZOO"
-        frmBusquedaEstadoCuenta.MdiParent = Me
-        frmBusquedaEstadoCuenta.bd = True
-        frmBusquedaEstadoCuenta.Show()
-    End Sub
-
-    Private Sub EstadoDeCuentaVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EstadoDeCuentaVía2ToolStripMenuItem.Click
-        frmBusquedaEstadoCuenta.Close()
-        frmBusquedaEstadoCuenta.sucursal = "ZOO"
-        frmBusquedaEstadoCuenta.bd = False
-        frmBusquedaEstadoCuenta.MdiParent = Me
-        frmBusquedaEstadoCuenta.Show()
-    End Sub
-
     Private Sub DeudaPorAlumnoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeudaPorAlumnoToolStripMenuItem.Click
         frmBusquedaDeudaAlumnosvia1.Close()
         frmBusquedaDeudaAlumnosvia1.sucursal = "ZOO"
         frmBusquedaDeudaAlumnosvia1.MdiParent = Me
         frmBusquedaDeudaAlumnosvia1.Show()
+    End Sub
+
+    Private Sub Vía1ToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem7.Click
+        frmBusquedaDeudaCursovia1.Close()
+        frmBusquedaDeudaCursovia1.sucursal = "ZOO"
+        frmBusquedaDeudaCursovia1.MdiParent = Me
+        frmBusquedaDeudaCursovia1.Show()
+    End Sub
+
+    Private Sub Vía2ToolStripMenuItem7_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem7.Click
+        frmBusquedaDeudaCursovia2.Close()
+        frmBusquedaDeudaCursovia2.sucursal = "ZOO"
+        frmBusquedaDeudaCursovia2.MdiParent = Me
+        frmBusquedaDeudaCursovia2.Show()
     End Sub
 
     Private Sub PagosVía1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PagosVía1ToolStripMenuItem.Click
@@ -368,24 +366,6 @@ Public Class frmMain
         frmBuscarFEAFIP.Close()
         frmBuscarFEAFIP.MdiParent = Me
         frmBuscarFEAFIP.Show()
-    End Sub
-
-    Private Sub PlanDeCuenctasVía1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeCuenctasVía1ToolStripMenuItem.Click
-        visRepCuentas.Close()
-        visRepCuentas.via = "Vía 1"
-        visRepCuentas.sucursal = "ZOO"
-        visRepCuentas.bd = True
-        visRepCuentas.MdiParent = Me
-        visRepCuentas.Show()
-    End Sub
-
-    Private Sub PlanDeCuentasVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PlanDeCuentasVía2ToolStripMenuItem.Click
-        visRepCuentas.Close()
-        visRepCuentas.via = "Vía 2"
-        visRepCuentas.sucursal = "ZOO"
-        visRepCuentas.bd = False
-        visRepCuentas.MdiParent = Me
-        visRepCuentas.Show()
     End Sub
 
     Private Sub ManualDeUsoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManualDeUsoToolStripMenuItem.Click
@@ -602,23 +582,21 @@ Public Class frmMain
         frmBuscarDevengacionesvia1.Show()
     End Sub
 
-    Private Sub PaseEntreCuentasVía1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaseEntreCuentasVía1ToolStripMenuItem.Click
-        frmPaseEntreCuentas.Close()
-        frmPaseEntreCuentas.MdiParent = Me
-        frmPaseEntreCuentas.bd = True
-        frmPaseEntreCuentas.sucursal = "ZOO"
-        frmPaseEntreCuentas.Show()
+    Private Sub Vía1ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem8.Click
+        visRepDeudaGeneral.Close()
+        visRepDeudaGeneral.bd = True
+        visRepDeudaGeneral.MdiParent = Me
+        visRepDeudaGeneral.Show()
     End Sub
 
-    Private Sub PaseEntreCuentasVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaseEntreCuentasVía2ToolStripMenuItem.Click
-        frmPaseEntreCuentas.Close()
-        frmPaseEntreCuentas.MdiParent = Me
-        frmPaseEntreCuentas.bd = False
-        frmPaseEntreCuentas.sucursal = "ZOO"
-        frmPaseEntreCuentas.Show()
+    Private Sub Vía2ToolStripMenuItem8_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem8.Click
+        visRepDeudaGeneral.Close()
+        visRepDeudaGeneral.bd = False
+        visRepDeudaGeneral.MdiParent = Me
+        visRepDeudaGeneral.Show()
     End Sub
 
-    Private Sub MovimientosVía1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimientosVía1ToolStripMenuItem.Click
+    Private Sub Vía1ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem9.Click
         frmBuscarMovimientos.Close()
         frmBuscarMovimientos.bd = True
         frmBuscarMovimientos.sucursal = "ZOO"
@@ -626,11 +604,83 @@ Public Class frmMain
         frmBuscarMovimientos.Show()
     End Sub
 
-    Private Sub MovimientosVía2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MovimientosVía2ToolStripMenuItem.Click
+    Private Sub Vía2ToolStripMenuItem9_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem9.Click
         frmBuscarMovimientos.Close()
         frmBuscarMovimientos.bd = False
         frmBuscarMovimientos.sucursal = "ZOO"
         frmBuscarMovimientos.MdiParent = Me
         frmBuscarMovimientos.Show()
+    End Sub
+
+    Private Sub Vía1ToolStripMenuItem10_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem10.Click
+        frmPaseEntreCuentas.Close()
+        frmPaseEntreCuentas.MdiParent = Me
+        frmPaseEntreCuentas.bd = True
+        frmPaseEntreCuentas.sucursal = "ZOO"
+        frmPaseEntreCuentas.Show()
+    End Sub
+
+    Private Sub Vía2ToolStripMenuItem10_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem10.Click
+        frmPaseEntreCuentas.Close()
+        frmPaseEntreCuentas.MdiParent = Me
+        frmPaseEntreCuentas.bd = False
+        frmPaseEntreCuentas.sucursal = "ZOO"
+        frmPaseEntreCuentas.Show()
+    End Sub
+
+    Private Sub Vía1ToolStripMenuItem11_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem11.Click
+        frmBusquedaEstadoCuenta.Close()
+        frmBusquedaEstadoCuenta.sucursal = "ZOO"
+        frmBusquedaEstadoCuenta.MdiParent = Me
+        frmBusquedaEstadoCuenta.bd = True
+        frmBusquedaEstadoCuenta.Show()
+    End Sub
+
+    Private Sub Vía2ToolStripMenuItem11_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem11.Click
+        frmBusquedaEstadoCuenta.Close()
+        frmBusquedaEstadoCuenta.sucursal = "ZOO"
+        frmBusquedaEstadoCuenta.bd = False
+        frmBusquedaEstadoCuenta.MdiParent = Me
+        frmBusquedaEstadoCuenta.Show()
+    End Sub
+
+    Private Sub Vía1ToolStripMenuItem12_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem12.Click
+        frmBusquedaIngresos.Close()
+        frmBusquedaIngresos.db = True
+        frmBusquedaIngresos.sucursal = "ZOO"
+        frmBusquedaIngresos.MdiParent = Me
+        frmBusquedaIngresos.Show()
+    End Sub
+
+    Private Sub Vía2ToolStripMenuItem12_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem12.Click
+        frmBusquedaIngresos.Close()
+        frmBusquedaIngresos.db = False
+        frmBusquedaIngresos.sucursal = "ZOO"
+        frmBusquedaIngresos.MdiParent = Me
+        frmBusquedaIngresos.Show()
+    End Sub
+
+    Private Sub Vía1ToolStripMenuItem13_Click(sender As Object, e As EventArgs) Handles Vía1ToolStripMenuItem13.Click
+        visRepCuentas.Close()
+        visRepCuentas.via = "Vía 1"
+        visRepCuentas.sucursal = "ZOO"
+        visRepCuentas.bd = True
+        visRepCuentas.MdiParent = Me
+        visRepCuentas.Show()
+    End Sub
+
+    Private Sub Vía2ToolStripMenuItem13_Click(sender As Object, e As EventArgs) Handles Vía2ToolStripMenuItem13.Click
+        visRepCuentas.Close()
+        visRepCuentas.via = "Vía 2"
+        visRepCuentas.sucursal = "ZOO"
+        visRepCuentas.bd = False
+        visRepCuentas.MdiParent = Me
+        visRepCuentas.Show()
+    End Sub
+
+    Private Sub LegajosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LegajosToolStripMenuItem.Click
+        frmLegajos.Close()
+        frmLegajos.MdiParent = Me
+        frmLegajos.Show()
     End Sub
 End Class
