@@ -44,8 +44,9 @@
         'se resetean los atributos internos
         NroFactura = ""
         PtoVenta = ""
-        fecha1 = ""
-        fecha2 = ""
+        fecha1 = Nothing
+        fecha2 = Nothing
+
         'ColorearBusqueda(True, txtDNI)
         'ColorearBusqueda(True, txtApellido)
         'EnableCmd(False, btnFacturar)
